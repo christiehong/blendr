@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html land="en">
+<head>
+  <title>Blendr</title>
+  <meta charset="utf-8">
+
+  <!-- Load style sheets -->
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lobster">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Pacifico" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Didact+Gothic" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+
+  <!-- Load jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Load scripts -->
+  <script src="main.js"></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div>
+      <!-- Navigation -->
+      <nav id="main-navigation">
+        <a href="#"><i class="fas fa-user-circle fa-lg"></i></a>
+        <a href="past_lists.html"><i class="fas fa-clipboard-list fa-lg"></i> Past Lists</a>
+        <i id="cart-trigger" class="fas fa-shopping-basket fa-lg"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <div class="search">
+      <img src=images/background.jpg>
+      <h1> Blendr </h1>
+      <input type="text" placeholder=" try sandwiches ... ">
+      <a href="searched.html"><i id="search-icon" class="fas fa-search"></i></a>
+    </div>
+    <div class="recently_tried">
+      <h2> Recently Tried Recipes </h2>
+        <div class="flex-grid">
+          <div class="col">
+            <a href="#">
+              <div class="tried_recipes">
+                <img src="images/noodle_stir_fry.jpg">
+                <p>Veggie Stir Fry</p>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#">
+              <div class="tried_recipes">
+                <img src="images/steak_and_lobster.jpg">
+                <p>Steak & Lobster</p>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#">
+              <div class="tried_recipes">
+                <img src="images/chicken_pot_pie.jpg">
+                <p>Chicken Pot Pie</p>
+              </div>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#">
+              <div class="tried_recipes">
+                <img src="images/creme_brulee.jpg">
+                <p>Creme Brulee</p>
+              </div>
+            </a>
+          </div>
+        </div>
+    </div>
+  </main>
+
+  <div id="shadow-layer"></div>
+
+  <!-- Cart -->
+  <div id="cart">
+    <h2>Cart</h2>
+   <ul class="cart-items">
+      <li>
+         <!-- ... -->
+      </li>
+
+      <li>
+         <!-- ... -->
+      </li>
+   </ul>
+   <button id="finish">FINISH</button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    	<p>&copy; 2018 Blendr <br> All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

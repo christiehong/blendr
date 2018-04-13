@@ -1,0 +1,246 @@
+:root {
+
+}
+
+/* ----- PRIMARY STYLING ----- */
+h1, h2 {
+  font-family: 'Pacifico';
+  margin: 0;
+  color: #391975;
+}
+
+body {
+  font-size: 100%;
+  font-family: 'Didact Gothic';
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+i {
+  color: white;
+}
+
+a:hover, i:hover {
+  color: #dcc6ff;
+}
+
+p {
+  font-size: 100%;
+}
+
+/* ----- HEADER STYLING ---- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  background: #391975;
+  color: white;
+  z-index: 10;
+}
+
+header h1 {
+  color: white;
+}
+
+.logo {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  padding-top: 5px;
+}
+
+#main-navigation {
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  padding-top: 15px;
+  font-size: 100%;
+}
+
+#main-navigation i {
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+#cart-trigger {
+  right: 0;
+}
+
+#icon:hover{
+  border-radius: 60px;
+  color: #dac1f0;
+}
+
+#cart {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100%;
+  padding-top: 50px;
+  overflow-y: auto;
+  transition: right 0.3s;
+}
+
+#cart h2 {
+  padding-left: 15px;
+}
+
+#finish {
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 50px;
+  bottom:50px;
+  background-color: lightgreen;
+  font-family: "Didact Gothic";
+  font-size: 100%;
+}
+
+#cart.speed-in {
+  right: 0;
+  background-color: white;
+  width: 250px;
+  z-index: 4;
+}
+
+#shadow-layer {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: gray;
+  cursor: pointer;
+  z-index: 3;
+  display: none;
+
+}
+#shadow-layer.is-visible {
+  display: block;
+  animation: fade-in;
+  animation-duration: 0.3s;
+}
+
+@keyframes fade-in{
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ----- MAIN -----  */
+
+.search {
+  /* width: 100%; */
+  height: 500px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  z-index: 1;
+
+}
+
+.search img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.6;
+  height: auto;
+  width: 100%;
+
+}
+
+.search h1 {
+  padding-top: 200px;
+  opacity: 1;
+  color: white;
+  font-size: 400%;
+  text-shadow:
+      5px 5px 0 #391975,
+      1px -1px 0 #391975,
+      -1px 1px 0 #391975,
+      2px 2px 0 #391975;
+}
+
+.search input {
+  width: 400px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+#search-icon {
+  background-color: #391975;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.recently_tried {
+  padding-top: 30px;
+  padding-bottom: 60px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.recently_tried h2 {
+  font-family: 'Pacifico';
+  color: #391975;
+  margin: 0;
+  padding-left: 30px;
+  padding-bottom: 20px;
+}
+
+.flex-grid {
+  display: flex;
+}
+
+.col {
+  flex: 1;
+  text-align: center;
+}
+
+.tried_recipes {
+  margin-left: 10%;
+  margin-right: 10%;
+  overflow: hidden;
+
+}
+
+.tried_recipes img{
+  width: 100%;
+  height: auto;
+  transition: all 0.3s;
+
+}
+
+.tried_recipes p {
+  margin: 0;
+  padding: 10px;
+  color: black;
+  background-color: lightgray;
+
+}
+
+.tried_recipes:hover img{
+  transform: scale(1.05);
+}
+
+
+/* ----- FOOTER -----  */
+footer {
+  background-color: #391975;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
