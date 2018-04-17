@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html land="en">
+<head>
+  <title>Blendr</title>
+  <meta charset="utf-8">
+
+  <!-- Load style sheets -->
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lobster">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Pacifico" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Didact+Gothic" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+
+  <!-- Load jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Load scripts -->
+  <script src="main.js"></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div>
+      <!-- Blendr Logo -->
+      <a href="index.html" class="logo">
+        <h1>Blendr</h1>
+      </a>
+
+      <!-- Navigation -->
+      <nav id="main-navigation">
+        <a href="profile.html"><i class="fas fa-user-circle fa-lg"></i></a>
+        <a href="past_lists.html"><i class="fas fa-clipboard-list fa-lg"></i> Past Lists</a>
+        <i class="fas fa-shopping-basket fa-lg"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+    <div class="wrapper">
+      <!-- Recipe -->
+      <div class="column left">
+
+      <button id="back"> &#8592;</button>
+      <button id="add-to-cart"> &#43; </button>
+
+        <div class="recipe-overview">
+          <h1>Veggie Omelette</h1>
+          <div id="image">
+            <img src="images/veggie_omelette.jpg">
+          </div>
+          <div id="content">
+            <h2>Difficulty:</h2> Easy <br>
+            <h2>Prep Time:</h2> 15 mins <br>
+            <h2>Calories:</h2> 400 calories <br>
+            <h2>Servings:</h2> 4 servings <br>
+          </div>
+        </div>
+        <div class="recipe-ingredients">
+          <h1> Ingredients: </h1>
+          <ul class="ingredients">
+            <li><span id=number>1</span> tsp olive oil</li>
+            <li><span id=number>1</span> chopped red bell pepper</li>
+            <li><span id=number>1</span> chopped onion</li>
+            <li><span id=number>1</span> box of mushrooms</li>
+            <li><span id=number>1</span> bag of baby spinach leaves</li>
+            <li><span id=number>8</span> eggs</li>
+            <li><span id=number>&frac12;</span> tsp of salt</li>
+            <li><span id=number>&frac12;</span> tsp of pepper</li>
+        </div>
+        <div class="recipe-directions">
+          <h1> Directions: </h1>
+          <ol class="directions">
+            <li>
+              In a nonstick skillet, heat oil over medium-high heat.
+              Add bell pepper, onion and mushrooms to oil.
+              Cook 2 minutes, stirring frequently, until onion is tender.
+              Stir in spinach; continue cooking and stirring just until spinach wilts.
+              Remove vegetables from pan to small bowl.
+            </li>
+            <li>
+              In medium bowl, beat egg product, water, salt and pepper with fork or whisk until
+              well mixed. Reheat same skillet over medium-high heat. Quickly pour egg mixture
+              into pan. While sliding pan back and forth rapidly over heat, quickly stir with
+              spatula to spread eggs continuously over bottom of pan as they thicken.
+              Let stand over heat a few seconds to lightly brown bottom of omelet.
+              Do not overcook; omelet will continue to cook after folding.
+            </li>
+            <li>
+              Place cooked vegetable mixture over half of omelet; garnish with more salt and pepper.
+              With spatula, fold other half of omelet over vegetables. Gently slide out
+              of pan onto plate. Serve immediately.
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Cart -->
+      <div class="column right" id="cart">
+        <h2>Cart</h2>
+       <ul class="cart-items">
+          <!-- products added to the cart will be inserted here using JavaScript -->
+       </ul>
+       <button id="finish">Finish</button>
+      </div>
+    </div>
+  </main>
+
+
+
+
+</body>
+</html>

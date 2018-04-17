@@ -1,12 +1,15 @@
 :root {
-
+  --green: #40bc44;
+  --dark-purple: #391975;
+  --light-purple: #dcc6ff;
+  --light-gray: #e2e2e2;
 }
 
 /* ----- PRIMARY STYLING ----- */
 h1, h2 {
   font-family: 'Pacifico';
   margin: 0;
-  color: #391975;
+  color: var(--dark-purple);
 }
 
 body {
@@ -25,11 +28,22 @@ i {
 }
 
 a:hover, i:hover {
-  color: #dcc6ff;
+  color: var(--light-purple);
+  cursor: pointer;
 }
 
 p {
   font-size: 100%;
+}
+
+input {
+  font-family: 'Didact Gothic';
+  font-size: 100%;
+  padding-left: 10px;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 /* ----- HEADER STYLING ---- */
@@ -39,7 +53,7 @@ header {
   left: 0;
   height: 50px;
   width: 100%;
-  background: #391975;
+  background: var(--dark-purple);
   color: white;
   z-index: 10;
 }
@@ -52,7 +66,7 @@ header h1 {
   position: absolute;
   left: 10px;
   top: 0;
-  padding-top: 5px;
+  font-size: 90%;
 }
 
 #main-navigation {
@@ -69,7 +83,7 @@ header h1 {
   padding-right: 10px;
 }
 
-#cart-trigger {
+#slide-cart-trigger {
   right: 0;
 }
 
@@ -78,17 +92,26 @@ header h1 {
   color: #dac1f0;
 }
 
-#cart {
+#slide-cart {
   position: fixed;
   top: 0;
   right: -100%;
   height: 100%;
   padding-top: 50px;
-  overflow-y: auto;
   transition: right 0.3s;
 }
 
-#cart h2 {
+#cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  padding-top: 50px;
+  background-color: white;
+  border-left: 2px solid var(--dark-purple);
+}
+
+#slide-cart h2, #cart h2 {
   padding-left: 15px;
 }
 
@@ -98,12 +121,13 @@ header h1 {
   width: 100%;
   height: 50px;
   bottom:50px;
-  background-color: lightgreen;
-  font-family: "Didact Gothic";
+  background-color: var(--light-purple);
+  font-family: "Pacifico";
   font-size: 100%;
+  color: var(--dark-purple);
 }
 
-#cart.speed-in {
+#slide-cart.speed-in {
   right: 0;
   background-color: white;
   width: 250px;
@@ -112,11 +136,11 @@ header h1 {
 
 #shadow-layer {
   position: fixed;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  background: gray;
+  background: rgba(67,87,121,.6);
   cursor: pointer;
   z-index: 3;
   display: none;
@@ -138,7 +162,7 @@ header h1 {
   }
 }
 
-/* ----- MAIN -----  */
+/* ----- MAIN for INDEX.html -----  */
 
 .search {
   /* width: 100%; */
@@ -168,10 +192,10 @@ header h1 {
   color: white;
   font-size: 400%;
   text-shadow:
-      5px 5px 0 #391975,
-      1px -1px 0 #391975,
-      -1px 1px 0 #391975,
-      2px 2px 0 #391975;
+      5px 5px 0 var(--dark-purple),
+      1px -1px 0 var(--dark-purple),
+      -1px 1px 0 var(--dark-purple),
+      2px 2px 0 var(--dark-purple);
 }
 
 .search input {
@@ -181,7 +205,7 @@ header h1 {
 }
 
 #search-icon {
-  background-color: #391975;
+  background-color: var(--dark-purple);
   padding: 10px;
   border-radius: 5px;
 }
@@ -195,7 +219,7 @@ header h1 {
 
 .recently_tried h2 {
   font-family: 'Pacifico';
-  color: #391975;
+  color: var(--dark-purple);
   margin: 0;
   padding-left: 30px;
   padding-bottom: 20px;
@@ -236,10 +260,113 @@ header h1 {
   transform: scale(1.05);
 }
 
+/* ----- MAIN for RECIPE PAGE ----- */
+main button {
+  margin-top: 75px;
+  margin-right: 15px;
+  margin-left: 15px;
+  width: 60px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 150%;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.column {
+  float: left;
+}
+
+.left {
+  order: 1;
+  width: 80%;
+}
+
+.right {
+  order: 2;
+  width: 20%;
+}
+
+#back {
+  float: left;
+  display: inline;
+}
+
+#add-to-cart {
+  display: inline;
+  float: right;
+  background-color: var(--green);
+  color: white;
+}
+
+.recipe-overview {
+  padding-top: 60px;
+  padding-bottom: 100px;
+  padding-left: 85px;
+  font-size: 100%;
+
+}
+
+.recipe-overview #image {
+  float: left;
+}
+
+.recipe-overview #image img {
+  display: block;
+  width: 100vw;
+  max-width: 400px;
+  max-height: 250px;
+  padding-top: 15px;
+  padding-right: 70px;
+}
+
+.recipe-overview #content {
+  padding-top: 40px;
+
+}
+
+.recipe-overview #content h2{
+  padding-right: 10px;
+  display:inline;
+}
+
+.recipe-ingredients {
+  background-color: var(--light-gray);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 85px;
+  padding-right: 85px;
+}
+.recipe-ingredients ul {
+  columns: 2;
+  list-style-type: none;
+  padding: 0;
+}
+
+.recipe-ingredients ul span#number {
+  font-weight: bold;
+  color: var(--dark-purple);
+  padding-right: 10px;
+  padding-left: 30px;
+}
+
+.recipe-directions {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 85px;
+  padding-right: 85px;
+}
+
+.recipe-directions li {
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
 
 /* ----- FOOTER -----  */
 footer {
-  background-color: #391975;
+  background-color: var(--dark-purple);
   color: white;
   text-align: center;
   padding: 15px;
