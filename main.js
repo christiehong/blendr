@@ -34,18 +34,24 @@ jQuery(document).ready(function($){
 	// add recipe to cart
 	$('#add-to-cart').on('click', function() {
 		event.preventDefault();
-		var recipeAdded = $('<li class="recipe-name"><h3>Veggie Omelette</h3><button class="remove-recipe">x</button></li><ul class="ingredient"><li>Olive Oil</li><li>1 red bell pepper</li><li>1 onion</li><li>1 box of mushrooms</li><li>1 bag of spinach</li><li>8 eggs</li><li>salt</li><li>pepper</li></ul>');
+		var recipeAdded = $('<li class="recipe-name"><h3>Veggie Omelette</h3><i id="remove-recipe" class="fas fa-trash-alt"></i><ul class="ingredient"><li>olive oil</li><li>1 red bell pepper</li><li>1 onion</li><li>1 box of mushrooms</li><li>1 bag of spinach</li><li>8 eggs</li><li>salt</li><li>pepper</li></ul></li>');
 		$('.cart-items').eq(0).prepend(recipeAdded);
 	});
 
 	// remove recipe from cart
-	$('.cart-items').eq(0).on('click', '.remove-recipe', function() {
-		console.log($(event.target).parents('.recipe-name'));
-		console.log($(event.target).parents());
-
-		// $(event.target).parents('.recipe-name').css('top', top);
+	$('.cart-items').eq(0).on('click', '#remove-recipe', function() {
 		event.preventDefault();
-		$('.cart-items').eq(0).find('.deleted').remove();
+		$(event.target).parents('li').addClass('toDelete');
+		$('.cart-items').eq(0).find('.toDelete').remove();
+	});
+
+	// open final check modal
+	$("#finish").on('click', function() {
+		$('.modal').show();
+	});
+
+	$(".close").on('click', function() {
+		$('.modal').hide();
 	})
 
 });
