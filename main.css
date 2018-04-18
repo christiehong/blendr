@@ -376,6 +376,54 @@ main button {
   color: var(--dark-purple);
 }
 
+/* ----- MAIN for PAST LISTS ----- */
+
+#past_lists_column{
+  display: flex;
+  height: calc(100vh - 50px);
+  width: 100vw;
+  margin-top: 50px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#past_lists_title{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  font-family: 'Pacifico';
+  margin: 0;
+  color: var(--dark-purple);
+  font-size: 250%;
+  height: calc((100vh - 50px)/3);
+}
+
+txt{
+  font-size: 125%;
+  font-family: 'Didact Gothic';
+  margin-left: 8px;
+}
+
+#icon{
+  margin-top: 5px;
+}
+
+.f1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: calc((100vh - 50px)/16);
+}
+
+.past_lists{
+  color: black;
+}
+
+/* ----- MAIN for ONE LIST ----- */
+
+
+
 /* ----- MODAL ----- */
 .modal {
   display: none;
