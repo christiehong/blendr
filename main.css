@@ -445,7 +445,7 @@ txt{
   padding: 20px;
   border: 1px solid white;
   border-radius: 10px;
-  width: 50%;
+  width: 80%;
 }
 
 .close {
@@ -461,15 +461,48 @@ txt{
   cursor: pointer;
 }
 
-.export {
+/* ----- TUTORIAL ---- */
+.tutorial-container {
+  border-style: solid;
+  position: relative;
+  width: 60vw;
+  height: 70vh;
+  margin-top: 15vh;
+  margin-left: 20vw;
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  font-size: 2em;
+}
+
+.tutorial-description {
   text-align: center;
 }
 
-.export button {
-  padding: 10px 25px 10px 25px;
-  background-color: var(--green);
+.signup {
+  width: 90%;
+  line-height: 1.5;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+.nav {
+  background-color: var(--dark-purple);
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  border-style: none;
   color: white;
-  font-size: 100%;
+  font-size: 30px;
+  top: 80px;
+}
+
+.tags {
+  border: 1.5px solid var(--light-gray);
+  height: 100px;
+  width: 80%;
 }
 
 .experience-container {
@@ -496,13 +529,24 @@ txt{
 }
 
 #next {
-  left: 85%;
+  left: 790px;
 }
 
 #slide5 {
   text-align: center;
   line-height: 80px;
   vertical-align: middle;
+}
+
+#submit {
+  width: 150px;
+  height: 60px;
+  border-radius: 5px;
+  font-size: 80%;
+  background-color: var(--dark-purple);
+  border: none;
+  color: white;
+
 }
 
 /* ----- FOOTER -----  */
