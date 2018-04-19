@@ -504,6 +504,39 @@ txt{
   width: 80%;
 }
 
+.experience-container {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+
+.level {
+  float: left;
+  width: 32%;
+  height: 250px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 250px;
+  border: 1px solid white;
+  font-size: 2em;
+  color: var(--dark-purple);
+  background-color: #ecd6ff;
+}
+
+.level:hover{
+  background-color: var(--light-purple);
+}
+
+#next {
+  left: 85%;
+}
+
+#slide5 {
+  text-align: center;
+  line-height: 80px;
+  vertical-align: middle;
+}
+
 /* ----- FOOTER -----  */
 footer {
   background-color: var(--dark-purple);
