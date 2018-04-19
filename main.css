@@ -445,7 +445,7 @@ txt{
   padding: 20px;
   border: 1px solid white;
   border-radius: 10px;
-  width: 80%;
+  width: 50%;
 }
 
 .close {
@@ -460,6 +460,22 @@ txt{
   text-decoration: none;
   cursor: pointer;
 }
+
+.export {
+  text-align: center;
+}
+
+.export button {
+  background-color: var(--green);
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 80%;
+  border-radius: 5px;
+}
+
 
 /* ----- TUTORIAL ---- */
 .tutorial-container {
@@ -548,6 +564,7 @@ txt{
   color: white;
 
 }
+
 
 /* ----- FOOTER -----  */
 footer {
