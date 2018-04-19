@@ -445,7 +445,7 @@ txt{
   padding: 20px;
   border: 1px solid white;
   border-radius: 10px;
-  width: 80%;
+  width: 50%;
 }
 
 .close {
@@ -459,6 +459,17 @@ txt{
   color: var(--dark-purple);
   text-decoration: none;
   cursor: pointer;
+}
+
+.export {
+  text-align: center;
+}
+
+.export button {
+  padding: 10px 25px 10px 25px;
+  background-color: var(--green);
+  color: white;
+  font-size: 100%;
 }
 
 /* ----- FOOTER -----  */
