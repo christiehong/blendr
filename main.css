@@ -409,6 +409,11 @@ txt{
 
 #icon{
   margin-top: 5px;
+  color: black;
+}
+
+#icon:hover{
+  color: black;
 }
 
 .f1 {
@@ -417,10 +422,18 @@ txt{
   margin-top: 10px;
   margin-bottom: 10px;
   height: calc((100vh - 50px)/16);
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .past_lists{
   color: black;
+}
+
+.past_lists:hover{
+  color: var(--light-purple);
 }
 
 #past_lists_back{
@@ -492,13 +505,14 @@ txt{
 
 .veggie_recipe{
   color: black;
+  margin-right: 5px;
 }
 
 .veggie_recipe:hover{
   color: var(--light-purple);
 }
 
-.noodle_recipe{
+#noodle_recipe{
   margin-right: 10px;
 }
 
@@ -508,14 +522,12 @@ txt{
   width: 25vw;
 }
 
-
 #noodle_stir_fry_pic{
   clip-path: circle(15vh at center);
   height: 30vh;
   width: 25vw;
   margin-right: 20px;
 }
-
 
 .minutes_button, .serves_button, .vegan_button{
   background-color: var(--dark-purple);
