@@ -628,7 +628,8 @@ txt{
 
 /* ----- TUTORIAL ---- */
 .tutorial-container {
-  border-style: solid;
+  border: solid 2px gray;
+  box-shadow: 10px 10px lightgray;
   position: relative;
   width: 60vw;
   height: 70vh;
@@ -638,6 +639,7 @@ txt{
   padding-top: 20px;
   padding-left: 20px;
   font-size: 2em;
+  background-color: #efe6ff;
 }
 
 .tutorial-description {
@@ -668,11 +670,13 @@ txt{
   border: 1.5px solid var(--light-gray);
   height: 100px;
   width: 80%;
+  background-color: white;
 }
 
 .experience-container {
   display: flex;
   margin-top: 30px;
+  margin-left: 10px;
   margin-bottom: 35px;
 }
 
@@ -683,10 +687,10 @@ txt{
   text-align: center;
   vertical-align: middle;
   line-height: 250px;
-  border: 1px solid white;
+  border: 1px solid lightgray;
   font-size: 2em;
-  color: var(--dark-purple);
-  background-color: #ecd6ff;
+  color: darkgray;
+  background-color: white;
 }
 
 .level:hover{
@@ -711,7 +715,14 @@ txt{
   background-color: var(--dark-purple);
   border: none;
   color: white;
+}
 
+#submit-container {
+  text-align: center;
+}
+
+#tac {
+  font-size: 0.7em;
 }
 
 
