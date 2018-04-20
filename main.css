@@ -431,10 +431,37 @@ txt{
   height: 40px;
   border-radius: 5px;
   font-size: 150%;
-
 }
 
+#past_lists_back_href{
+  color: black;
+}
+
+#past_lists_back_href:hover{
+  color: var(--light-purple);
+}
+
+
 /* ----- MAIN for ONE LIST ----- */
+
+#one_list_back{
+  position: absolute;
+  top: 75px;
+  left: 15px;
+  width: 60px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 150%;
+}
+
+#one_list_back_href{
+  color: black;
+}
+
+#one_list_back_href:hover{
+  color: var(--light-purple);
+}
+
 
 #one_list_title{
   display: flex;
