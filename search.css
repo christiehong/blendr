@@ -8,36 +8,60 @@
 *{
 	box-sizing: border-box;
 }
+
 .filters {
   width: 20%;
   float: left;
-
 }
+
 .filter-header {
   padding-bottom: 10px;
   border-bottom: 2px solid var(--dark-purple);
+  padding-left: 10px;
+}
+
+.filter-header h2 {
+  display: inline;
 }
 
 .filter-restrictions {
+  padding-left: 10px;
   padding-bottom: 10px;
   border-bottom: 2px solid var(--dark-purple);
 }
 .filter-preptime {
+  padding-left: 10px;
   padding-bottom: 10px;
   border-bottom: 2px solid var(--dark-purple);
 }
+
+.filter-preptime input{
+  width: 80%;
+}
+
 .filter-servings {
+  padding-left: 10px;
   padding-bottom: 10px;
   border-bottom: 2px solid var(--dark-purple);
 }
 
 .filter-difficulty {
+  padding-left: 10px;
   padding-bottom: 10px;
   border-bottom: 2px solid var(--dark-purple);
 }
-#filters-clear {
+
+.filter-cookware {
+  padding-left: 10px;
 
 }
+
+#filters-clear {
+  float: right;
+  margin-top: 15px;
+  margin-right: 15px;
+}
+
 .results {
   margin-top: 0px;
   width: 80%;
