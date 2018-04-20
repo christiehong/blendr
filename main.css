@@ -433,7 +433,8 @@ txt{
 }
 
 .past_lists:hover{
-  color: var(--light-purple);
+  text-decoration: underline;
+  color: black;
 }
 
 #past_lists_back{
@@ -511,7 +512,8 @@ txt{
 }
 
 .veggie_recipe:hover{
-  color: var(--light-purple);
+  color: black;
+  text-decoration: underline;
 }
 
 #noodle_recipe{
