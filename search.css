@@ -250,7 +250,9 @@ header h1 {
   height: 30px;
   border-radius: 5px;
 }
-
+.searching {
+  text-align: center;
+}
 #search-icon {
   background-color: var(--dark-purple);
   padding: 10px;

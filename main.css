@@ -398,7 +398,7 @@ main button {
   color: var(--dark-purple);
   font-size: 250%;
   height: calc((100vh - 50px)/3);
-
+  align-items: center;
 }
 
 txt{
@@ -444,13 +444,14 @@ txt{
   height: 40px;
   border-radius: 5px;
   font-size: 150%;
-}
-
-#past_lists_back_href{
   color: black;
 }
 
-#past_lists_back_href:hover{
+#past_list_back_href{
+  color: black;
+}
+
+#past_list_back_href:hover{
   color: var(--light-purple);
 }
 
@@ -485,6 +486,7 @@ txt{
   color: var(--dark-purple);
   font-size: 250%;
   height: calc((100vh - 50px)/4);
+  align-items: center;
 }
 
 .one_list_row{
