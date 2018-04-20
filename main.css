@@ -386,6 +386,7 @@ main button {
   margin-top: 50px;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
 #past_lists_title{
@@ -397,6 +398,7 @@ main button {
   color: var(--dark-purple);
   font-size: 250%;
   height: calc((100vh - 50px)/3);
+
 }
 
 txt{
@@ -421,8 +423,116 @@ txt{
   color: black;
 }
 
+#past_lists_back{
+  position: absolute;
+  top: 75px;
+  left: 15px;
+  width: 60px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 150%;
+
+}
+
 /* ----- MAIN for ONE LIST ----- */
 
+#one_list_title{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  font-family: 'Pacifico';
+  margin: 0;
+  color: var(--dark-purple);
+  font-size: 250%;
+  height: calc((100vh - 50px)/4);
+}
+
+.one_list_row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 35vh;
+  width: 80vw;
+  align-items: center;
+  border-bottom: 1px solid silver;
+}
+
+.one_list_recipe{
+  font-size: 180%;
+  font-family: 'Didact Gothic';
+  margin-right: 10px;
+}
+
+.veggie_recipe{
+  color: black;
+}
+
+.veggie_recipe:hover{
+  color: var(--light-purple);
+}
+
+.noodle_recipe{
+  margin-right: 10px;
+}
+
+#omelette_pic{
+  clip-path: circle(15vh at center);
+  height: 30vh;
+  width: 25vw;
+}
+
+
+#noodle_stir_fry_pic{
+  clip-path: circle(15vh at center);
+  height: 30vh;
+  width: 25vw;
+  margin-right: 20px;
+}
+
+
+.minutes_button, .serves_button, .vegan_button{
+  background-color: var(--dark-purple);
+  color: white;
+  outline: 0px solid black;
+  font-size: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 8px;
+  cursor: initial;
+}
+
+.minutes_button{
+  margin-left: 20px;
+  width: 50px;
+  height: 60px;
+}
+
+.minutes_button:disabled{
+   cursor: initial;
+}
+
+.serves_button{
+  width: 70px;
+  height: 60px;
+}
+
+.serves_button:disabled{
+   cursor: initial;
+}
+
+.vegan_button{
+  width: 50px;
+  height: 60px;
+  margin-right: 15px;
+}
+
+.vegan_button:disabled{
+   cursor: initial;
+}
+
+.checked {
+    color: orange;
+}
 
 
 /* ----- MODAL ----- */
