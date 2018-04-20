@@ -5,6 +5,12 @@
   --light-gray: #e2e2e2;
 }
 /* ---- For Search ---- */
+
+.recipe-overview a:hover{
+    text-decoration: underline;
+    text-decoration-color: var(--dark-purple);
+}
+
 *{
 	box-sizing: border-box;
 }
