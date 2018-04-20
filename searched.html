@@ -52,13 +52,15 @@
 		<!-- Filter-Restrictions -->
 		<div class="filter-restrictions">
 			<h2>Dietary restrictions</h2>
-			<select name="restrictions" multiple="" class="restrictions-dropdown">
-				<option value="">Restrictions</option>
+			<!-- <select name="restrictions" multiple="" class="restrictions-dropdown">
 			  <option value="Vergiterian">Vegeterian</option>
 				<option value="Vegan">Vegan</option>
 				<option value="Peanuts">Peanuts</option>
 				<option value="Treenuts">Treenuts</option>
-			</select>
+			</select> -->
+			<ul class="restrictions">
+				<li>Vegetarian</li>
+			</ul>
 		</div>
 		<!-- Filter-preptime -->
 		<div class="filter-preptime">
@@ -68,25 +70,31 @@
 		<!-- Filter-Servings -->
 		<div class="filter-servings">
 			<h2>Number of servings</h2>
-			<input type="text" name="servings" placeholder="write a number"></input>
+			<select name="servings" class="servings-dropdown">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5+</option>
+			</select>
 		</div>
 		<!-- filter-Difficulty -->
 		<div class="filter-difficulty">
 			<h2>Difficulty:</h2>
 			<select name="Difficulty" class="Difficulty-dropdown">
-				<option>Hard</option>
-				<option>Medium</option>
 				<option>Easy</option>
+				<option>Medium</option>
+				<option>Hard</option>
 			</select>
 		</div>
 		<!-- Filter-Cookware -->
 		<div class="filter-cookware">
 			<h2>Available Cookware:</h2>
-			<select name="Cookware" class="cookware-dropdown">
-				<option>pots</option>
-				<option>pans</option>
-				<option>oven</option>
-			</select>
+			<div class="cookware-dropdown">
+				<input type="checkbox">pots</input><br>
+				<input type="checkbox">pans</input><br>
+				<input type="checkbox">oven</input><br>
+			</div>
 		</div>
 	</div>
 
@@ -101,10 +109,15 @@
 		<div class="results-show">
 
 			<div class="recipe-overview">
+<<<<<<< HEAD
+				<!-- <button id="add-to-cart"> &#43; </button> -->
+				<h1>Veggie Omelette</h1>
+=======
 				<button id="add-to-cart"> &#43; </button>
 				<a href="veggie_omelette.html" class="click">
 					<h1 class="clickable_header">Veggie Omelette</h1>
 				</a>
+>>>>>>> ac79aaa6bea5ed9fbf82c23839a271cd25f8e7a0
 				<div id="image">
 					<img src="images/vegan_omelette.jpg">
 				</div>
@@ -118,7 +131,7 @@
 			</div>
 
 			<div class="recipe-overview">
-				<button id="add-to-cart"> &#43; </button>
+				<!-- <button id="add-to-cart"> &#43; </button> -->
 				<h1>Noodles Stir-fry</h1>
 				<div id="image">
 					<img src="images/noodle_stir_fry.jpg">
@@ -132,7 +145,7 @@
 			</div>
 
 			<div class="recipe-overview">
-				<button id="add-to-cart"> &#43; </button>
+				<!-- <button id="add-to-cart"> &#43; </button> -->
 				<h1>Steak and lonbster</h1>
 				<div id="image">
 					<img src="images/steak_and_lobster.jpg">
@@ -146,7 +159,7 @@
 			</div>
 
 			<div class="recipe-overview">
-				<button id="add-to-cart"> &#43; </button>
+				<!-- <button id="add-to-cart"> &#43; </button> -->
 				<h1>Chicken Pot Pie</h1>
 				<div id="image">
 					<img src="images/chicken_pot_pie.jpg">
