@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Blendr</title>
+		<meta charset="utf-8">
+
+		<!-- Load style sheets -->
+		<link rel="stylesheet" href="search.css">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lobster">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Pacifico" />
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Didact+Gothic" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+
+		<!-- Load jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Load scripts -->
+		<script src="main.js"></script>
+	</head>
+	  <!-- Header -->
+  <header>
+    <div>
+
+      <a href="index.html" class="logo">
+        <h1>Blendr</h1>
+      </a>
+			<!-- Search bar -->
+			<div class=search>
+				<input type="text" placeholder="try sandwiches ... ">
+	      <a href="searched.html"><i id="search-icon" class="fas fa-search"></i></a>
+			</div>
+
+			<!-- Navigation -->
+      <nav id="main-navigation">
+        <a href="#"><i class="fas fa-user-circle fa-lg"></i></a>
+        <a href="past_lists.html"><i class="fas fa-clipboard-list fa-lg"></i> Past Lists</a>
+        <i id="slide-cart-trigger" class="fas fa-shopping-basket fa-lg"></i>
+      </nav>
+    </div>
+  </header>
+
+<body>
+	<!-- Filters -->
+	<div class="filters">
+		<!-- Filter-Header -->
+		<div class="filter-header">
+			<h2>Filters</h2>
+			<button id="filters-clear">Clear all</button>
+		</div>
+		<!-- Filter-Restrictions -->
+		<div class="filter-restrictions">
+			<h2>Dietary restrictions</h2>
+			<select name="restrictions" multiple="" class="restrictions-dropdown">
+				<option value="">Restrictions</option>
+			  <option value="Vergiterian">Vegiterian</option>
+				<option value="Vegan">Vegan</option>
+				<option value="Peanuts">Peanuts</option>
+				<option value="Treenuts">Treenuts</option>
+			</select>
+		</div>
+		<!-- Filter-preptime -->
+		<div class="filter-preptime">
+			<h2>Prep Time</h2>
+			<input type="range" min="1" max="100" value="50" class="preptime-slider" id="mySlider"></input>
+		</div>
+		<!-- Filter-Servings -->
+		<div class="filter-servings">
+			<h2>Number of servings</h2>
+			<input type="text" name="servings" placeholder="write a number"></input>
+		</div>
+		<!-- filter-Difficulty -->
+		<div class="filter-difficulty">
+			<h2>Difficulty:</h2>
+			<select name="Difficulty" class="Difficulty-dropdown">
+				<option>Hard</option>
+				<option>Medium</option>
+				<option>Easy</option>
+			</select>
+		</div>
+		<!-- Filter-Cookware -->
+		<div class="filter-cookware">
+			<h2>Available Cookware:</h2>
+			<select name="Cookware" class="cookware-dropdown">
+				<option>pots</option>
+				<option>pans</option>
+				<option>oven</option>
+			</select>
+		</div>
+	</div>
+
+	<!-- Results -->
+	<div class="results">
+		<!-- Results-Tags -->
+		<div class="results-tags">
+			<h2> Best Recipies for your search... </h2>
+
+		</div>
+		<!-- Results-Show -->
+		<div class="results-show">
+
+			<div class="recipe-overview">
+				<button id="add-to-cart"> &#43; </button>
+				<h1>Veggie Omelette</h1>
+				<div id="image">
+					<img src="images/veggie_omelette.jpg">
+				</div>
+				<div id="content">
+					<h2>Difficulty:</h2> Easy <br>
+					<h2>Prep Time:</h2> 15 mins <br>
+					<h2>Calories:</h2> 400 calories <br>
+					<h2>Servings:</h2> 4 servings <br>
+				</div>
+
+			</div>
+
+			<div class="recipe-overview">
+				<button id="add-to-cart"> &#43; </button>
+				<h1>Noodles Stir-fry</h1>
+				<div id="image">
+					<img src="images/noodle_stir_fry.jpg">
+				</div>
+				<div id="content">
+					<h2>Difficulty:</h2> Easy <br>
+					<h2>Prep Time:</h2> 15 mins <br>
+					<h2>Calories:</h2> 400 calories <br>
+					<h2>Servings:</h2> 4 servings <br>
+				</div>
+			</div>
+
+			<div class="recipe-overview">
+				<button id="add-to-cart"> &#43; </button>
+				<h1>Steak and lonbster</h1>
+				<div id="image">
+					<img src="images/steak_and_lobster.jpg">
+				</div>
+				<div id="content">
+					<h2>Difficulty:</h2> Easy <br>
+					<h2>Prep Time:</h2> 15 mins <br>
+					<h2>Calories:</h2> 400 calories <br>
+					<h2>Servings:</h2> 4 servings <br>
+				</div>
+			</div>
+
+			<div class="recipe-overview">
+				<button id="add-to-cart"> &#43; </button>
+				<h1>Chicken Pot Pie</h1>
+				<div id="image">
+					<img src="images/chicken_pot_pie.jpg">
+				</div>
+				<div id="content">
+					<h2>Difficulty:</h2> Easy <br>
+					<h2>Prep Time:</h2> 15 mins <br>
+					<h2>Calories:</h2> 400 calories <br>
+					<h2>Servings:</h2> 4 servings <br>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+</body>
+</html>
