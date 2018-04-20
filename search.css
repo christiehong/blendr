@@ -258,7 +258,13 @@ header h1 {
 }
 .searching {
   text-align: center;
+  margin-top: 10px;
 }
+
+.searching input {
+  width: 30%;
+}
+
 #search-icon {
   background-color: var(--dark-purple);
   padding: 10px;
