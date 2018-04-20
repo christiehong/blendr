@@ -16,3 +16,10 @@ function showSlide(n) {
 	slides[slideIndex-1].style.display = "inline"
 }
 
+function addAllergy() {
+	$("#allergy-tags").append("<div class = 'tag'>Tree Nuts</div><div class ='tag' id='remove'><i class='fas fa-times'></i></div>")
+}
+
+function addPreference() {
+	$("#pref-tags").append("<div class = 'tag'>Vegeterian</div><div class ='tag' id='remove'><i class='fas fa-times'></i></div>")
+}
