@@ -635,10 +635,10 @@ txt{
   border: solid 2px gray;
   box-shadow: 10px 10px lightgray;
   position: relative;
-  width: 60vw;
-  height: 70vh;
+  width: 65vw;
+  height: 75vh;
   margin-top: 15vh;
-  margin-left: 20vw;
+  margin-left: calc((100vw - 65vw)/2);
   border-radius: 20px;
   padding-top: 20px;
   padding-left: 20px;
@@ -668,6 +668,17 @@ txt{
   color: white;
   font-size: 30px;
   top: 470px;
+  left: 0px;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+#prev{
+  left: -120px;
+}
+
+#next {
+  left: 900px;
 }
 
 .tags {
@@ -716,9 +727,7 @@ txt{
   color: white;
 }
 
-#next {
-  left: 870px;
-}
+
 
 #slide5 {
   text-align: center;
