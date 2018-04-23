@@ -6,8 +6,14 @@
 }
 
 /* ----- PRIMARY STYLING ----- */
-h1, h2 {
+h1 {
   font-family: 'Pacifico';
+  margin: 0;
+  color: var(--dark-purple);
+}
+
+h2 {
+  font-family: 'Didact Gothic';
   margin: 0;
   color: var(--dark-purple);
 }
@@ -112,7 +118,7 @@ header h1 {
   overflow: scroll;
 }
 
-#slide-cart h2, #cart h2 {
+#slide-cart h1, #cart h1 {
   padding-left: 15px;
 }
 

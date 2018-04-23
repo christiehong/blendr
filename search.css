@@ -22,7 +22,7 @@
 
 .filter-header {
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--dark-purple);
+  /* border-bottom: 2px solid var(--dark-purple); */
   padding-left: 10px;
 }
 
@@ -33,12 +33,13 @@
 .filter-restrictions {
   padding-left: 10px;
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--dark-purple);
+  /* border-bottom: 2px solid var(--dark-purple); */
+  background-color: var(--light-gray);
 }
 .filter-preptime {
   padding-left: 10px;
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--dark-purple);
+  /* border-bottom: 2px solid var(--dark-purple); */
 }
 
 .filter-preptime input{
@@ -48,23 +49,26 @@
 .filter-servings {
   padding-left: 10px;
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--dark-purple);
+  /* border-bottom: 2px solid var(--dark-purple); */
+  background-color: var(--light-gray);
+
 }
 
 .filter-difficulty {
   padding-left: 10px;
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--dark-purple);
+  /* border-bottom: 2px solid var(--dark-purple); */
 }
 
 .filter-cookware {
   padding-left: 10px;
+  background-color: var(--light-gray);
 
 }
 
 #filters-clear {
   float: right;
-  margin-top: 15px;
+  margin-top: 10px;
   margin-right: 15px;
 }
 
@@ -77,10 +81,17 @@
 }
 
 /* ----- PRIMARY STYLING ----- */
-h1, h2 {
+h1 {
   font-family: 'Pacifico';
   margin: 0;
   color: var(--dark-purple);
+}
+
+h2 {
+  font-family: 'Didact Gothic';
+  color: var(--dark-purple);
+  font-size: 130%;
+
 }
 
 body {
@@ -392,10 +403,10 @@ main button {
 
 .recipe-overview {
   padding-top: 10px;
-  padding-bottom: 40px;
+  padding-bottom: 90px;
   padding-left: 10px;
   font-size: 100%;
-  border: 2px solid var(--dark-purple);
+  /* border: 2px solid var(--dark-purple); */
   border-collapse: collapse;
 }
 
@@ -407,14 +418,14 @@ main button {
   display: block;
   width: 100vw;
   max-width: 400px;
-  max-height: 250px;
+  height: 250px;
   padding-top: 15px;
   padding-right: 70px;
 }
 
 .recipe-overview #content {
   padding-top: 40px;
-
+  padding-bottom: 50px;
 }
 
 .recipe-overview #content h2{
@@ -456,6 +467,14 @@ main button {
 
 .recipe-name h3 {
   display: inline;
+}
+
+.results-tags {
+  padding-left: 20px;
+  font-family: 'Didact Gothic';
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: var(--light-gray);
 }
 
 #remove-recipe{
