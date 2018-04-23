@@ -667,18 +667,18 @@ txt{
   border-style: none;
   color: white;
   font-size: 30px;
-  top: 470px;
+  top: 450px;
   left: 0px;
   padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 0px;
 }
 
 #prev{
-  left: -120px;
+  left: 30px;
 }
 
 #next {
-  left: 900px;
+  left: 725px;
 }
 
 .tags {
