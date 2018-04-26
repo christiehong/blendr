@@ -1,8 +1,14 @@
 :root {
   --green: #40bc44;
-  --dark-purple: #391975;
-  --light-purple: #dcc6ff;
+  --dark-purple: #6222e1;
+  --light-purple: #e7dbf6;
   --light-gray: #e2e2e2;
+  --dark-gray: #434245;
+}
+
+
+*:focus{
+  outline: none;
 }
 
 /* ----- PRIMARY STYLING ----- */
@@ -13,15 +19,16 @@ h1 {
 }
 
 h2 {
-  font-family: 'Didact Gothic';
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
   margin: 0;
   color: var(--dark-purple);
 }
 
 body {
   font-size: 100%;
-  font-family: 'Didact Gothic';
+  font-family: Gill Sans, sans-serif;
   margin: auto;
+  color: var(--dark-gray);
 }
 
 a {
@@ -129,9 +136,9 @@ header h1 {
   height: 50px;
   bottom: 50px;
   background-color: var(--light-purple);
-  font-family: "Pacifico";
-  font-size: 100%;
-  color: var(--dark-purple);
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  font-size: 125%;
+  color: black;
   border-radius: 0px;
 }
 
@@ -183,33 +190,34 @@ header h1 {
 
 }
 
+#search_form{
+  font-family: Helvetica, sans-serif;
+  font-weight: 100;
+  height: 40px;
+  width: 40%;
+  border-radius: 5px;
+  border: none;
+}
 .search img {
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
-  opacity: 0.6;
+  opacity: 0.75;
   height: auto;
   width: 100%;
-
 }
 
 .search h1 {
   padding-top: 200px;
   opacity: 1;
   color: white;
-  font-size: 400%;
+  font-size: 550%;
   text-shadow:
       5px 5px 0 var(--dark-purple),
       1px -1px 0 var(--dark-purple),
       -1px 1px 0 var(--dark-purple),
       2px 2px 0 var(--dark-purple);
-}
-
-.search input {
-  width: 400px;
-  height: 30px;
-  border-radius: 5px;
 }
 
 #search-icon {
@@ -226,8 +234,9 @@ header h1 {
 }
 
 .recently_tried h2 {
-  font-family: 'Pacifico';
-  color: var(--dark-purple);
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+
+  color: var(--dark-gray);
   margin: 0;
   padding-left: 30px;
   padding-bottom: 20px;
@@ -240,32 +249,33 @@ header h1 {
 .col {
   flex: 1;
   text-align: center;
+  align-items: center;
 }
 
 .tried_recipes {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 7%;
+  margin-right: 7%;
   overflow: hidden;
-
+  outline: solid 0.5px lightgray;
 }
 
 .tried_recipes img{
   width: 100%;
   height: auto;
   transition: all 0.3s;
-
+  opacity: 0.9;
 }
 
 .tried_recipes p {
   margin: 0;
   padding: 10px;
   color: black;
-  background-color: lightgray;
-
 }
 
 .tried_recipes:hover img{
   transform: scale(1.05);
+  opacity: 1;
+  
 }
 
 /* ----- MAIN for RECIPE PAGE ----- */
@@ -399,7 +409,7 @@ main button {
   display: flex;
   justify-content: center;
   margin-top: 50px;
-  font-family: 'Pacifico';
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
   margin: 0;
   color: var(--dark-purple);
   font-size: 250%;
@@ -409,7 +419,7 @@ main button {
 
 txt{
   font-size: 125%;
-  font-family: 'Didact Gothic';
+  font-family: Gill Sans, sans-serif;
   margin-left: 8px;
 }
 
@@ -488,7 +498,7 @@ txt{
   display: flex;
   justify-content: center;
   margin-top: 50px;
-  font-family: 'Pacifico';
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
   margin: 0;
   color: var(--dark-purple);
   font-size: 250%;
@@ -507,8 +517,8 @@ txt{
 }
 
 .one_list_recipe{
-  font-size: 180%;
-  font-family: 'Didact Gothic';
+  font-size: 150%;
+  font-family: Gill Sans, sans-serif;
   margin-right: 10px;
 }
 
@@ -552,21 +562,25 @@ txt{
 
 .minutes_button{
   margin-left: 20px;
-  width: 50px;
+  width: 70px;
   height: 60px;
 }
 
 .minutes_button:disabled{
    cursor: initial;
+   padding: 0;
+   border: none;
 }
 
 .serves_button{
-  width: 70px;
-  height: 60px;
+  width: 60px;
+  height: 60px; 
 }
 
 .serves_button:disabled{
    cursor: initial;
+   padding: 0;
+   border: none;
 }
 
 .vegan_button{
@@ -577,6 +591,8 @@ txt{
 
 .vegan_button:disabled{
    cursor: initial;
+   padding: 0;
+   border: none;
 }
 
 .checked {
@@ -727,7 +743,7 @@ txt{
   vertical-align: middle;
   line-height: 250px;
   border: 1px solid lightgray;
-  font-size: 2em;
+  font-size: 1.6em;
   color: darkgray;
   background-color: white;
 }
@@ -773,4 +789,5 @@ footer {
   color: white;
   text-align: center;
   padding: 15px;
+  height: 70px;
 }
