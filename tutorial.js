@@ -1,5 +1,6 @@
 var slideIndex = 1 
 var customerName
+var level
 var allergies = new Set()
 var preferences = new Set()
 
@@ -53,4 +54,17 @@ function removePref(ele) {
 	var text = ele.closest('.tag-container').children[0].innerHTML
 	preferences.delete(text)
 	ele.closest('.tag-container').remove()
+}
+
+function levelSelect(ele) {
+	level = ele.innerHTML
+	var children = document.getElementsByClassName("level") 
+	for (i = 0; i < 3; i++) {
+		if (($(".level")[i].innerHTML) != level) {
+			$(".level")[i].style.backgroundColor = "white"; 
+		}
+		else {
+			$(".level")[i].style.backgroundColor = "var(--light-purple)";
+		}
+	}
 }
