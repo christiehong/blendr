@@ -107,6 +107,11 @@ header h1 {
   transition: right 0.3s;
 }
 
+#slide-cart p {
+  padding-left: 20px;
+  text-align: center;
+}
+
 #cart {
   position: fixed;
   top: 0;
@@ -116,6 +121,11 @@ header h1 {
   background-color: white;
   border-left: 2px solid var(--dark-purple);
   overflow: scroll;
+}
+
+#cart p {
+  padding-left: 20px;
+  text-align: center;
 }
 
 #slide-cart h1, #cart h1 {
@@ -129,7 +139,6 @@ header h1 {
   height: 50px;
   bottom: 50px;
   background-color: var(--light-purple);
-  font-family: "Pacifico";
   font-size: 100%;
   color: var(--dark-purple);
   border-radius: 0px;
