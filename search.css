@@ -82,7 +82,8 @@
 
 /* ----- PRIMARY STYLING ----- */
 h1 {
-  font-family: 'Pacifico';
+  /* font-family: 'Pacifico'; */
+  font-weight: bolder;
   margin: 0;
   color: var(--dark-purple);
 }

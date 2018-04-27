@@ -314,7 +314,7 @@ main button {
   padding-bottom: 100px;
   padding-left: 85px;
   font-size: 100%;
-
+  margin-bottom: 20px;
 }
 
 .recipe-overview #image {
