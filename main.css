@@ -195,6 +195,7 @@ header h1 {
 }
 
 .search h1 {
+  font-family: 'Pacifico';
   padding-top: 200px;
   opacity: 1;
   color: white;
@@ -226,7 +227,6 @@ header h1 {
 }
 
 .recently_tried h2 {
-  font-family: 'Pacifico';
   color: var(--dark-purple);
   margin: 0;
   padding-left: 30px;
