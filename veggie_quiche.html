@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html land="en">
+<head>
+  <title>Blendr</title>
+  <meta charset="utf-8">
+
+  <!-- Load style sheets -->
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lobster">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Pacifico" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Didact+Gothic" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+
+  <!-- Load jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Load scripts -->
+  <script src="main.js"></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div>
+      <!-- Blendr Logo -->
+      <a href="landing.html" class="logo">
+        <h1>Blendr</h1>
+      </a>
+
+      <!-- Navigation -->
+      <nav id="main-navigation">
+        <a href="profile.html"><i class="fas fa-user-circle fa-lg"></i></a>
+        <a href="past_lists.html"><i class="fas fa-clipboard-list fa-lg"></i> Past Lists</a>
+        <i class="fas fa-shopping-basket fa-lg"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+    <div class="wrapper">
+      <!-- Recipe -->
+      <div class="column left">
+
+      <a href="searched.html"><button id="back">&#8592;</button></a>
+      <button id="add-to-cart"> &#43; </button>
+
+        <div class="recipe-overview">
+          <h1>Loaded Veggies Quiche</h1>
+          <div id="image">
+            <img src="images/veggie_quiche.jpg">
+          </div>
+          <div id="content">
+            <h2>Difficulty:</h2> Easy <br>
+            <h2>Prep Time:</h2> 45 mins <br>
+            <h2>Calories:</h2> 300 calories <br>
+            <h2>Servings:</h2> 8 servings <br>
+          </div>
+        </div>
+        <div class="recipe-ingredients">
+          <h1> Ingredients: </h1>
+          <ul class="ingredients">
+            <li><span id=number>1</span> unbaked pie crust</li>
+            <li><span id=number>1</span> tsp of olive oil</li>
+            <li><span id=number>1</span> box of mushrooms </li>
+            <li><span id=number>2</span> zucchini</li>
+            <li><span id=number>1</span> tomato</li>
+            <li><span id=number>1</span> bunch of basil</li>
+            <li><span id=number>&frac12;</span> tsp of salt</li>
+            <li><span id=number>&frac12;</span> tsp of pepper</li>
+            <li><span id=number>2</span> tbsp olive oil</li>
+            <li><span id=number>&frac12;</span> cup of milk</li>
+            <li><span id=number>4</span> eggs</li>
+            <li><span id=number>1</span> cup Colby-Monterey Jack cheese</li>
+
+
+        </div>
+        <div class="recipe-directions">
+          <h1> Directions: </h1>
+          <ol class="directions">
+            <li>
+              Preheat oven to 400 degrees F
+            </li>
+            <li>
+              Bake pie crust in preheated oven until firm, until 8 minutes. Remove crust
+              from oven and set aside. Reduce oven heat to 350 degrees F.
+            </li>
+            <li>
+              Heat olive oil in a large skillet over medium heat. Cook and stir onion,
+              green bell pepper, mushrooms, and zucchini in hot oil unti lsoft, 5 to 7
+              minutes. Remove vegetables from skillet and set aside.
+            </li>
+            <li>
+              Sprinkle tomato slices with flour and basil; cook in the skillet for 1
+              minute per side. Whisk eggs, milk, salt and pepper together in a small bowl.
+            </li>
+            <li>
+              Spread 1 cup Colby-Monterey Jack cheese in the bottom of pie crust. Layer
+              vegetable mixture over the cheese and top with the tomatoes. Pour egg
+              mixture into pie shell. Sprinkle remaining &frac12; cup cheese atop the quiche.
+            </li>
+            <li>
+              Bake in preheated oven until a knife inserted near the center comes out clean,
+              40 to 45 minutes. Cool 5 minutes before serving.
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Cart -->
+      <div class="column right" id="cart">
+        <h1>Cart</h1>
+       <ul class="cart-items">
+         <p>Your cart is currently empty. </p>
+          <!-- products added to the cart will be inserted here using JavaScript -->
+       </ul>
+       <button id="finish">Finish</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h1>Hello!</h1>
+      <p>You have specified the following dietary restrictions: </p>
+      <h2>Grocery Recipes in Your Cart</h2>
+      <ul>
+        <li class="recipe-name">
+          <h3>Veggie Omelette</h3>
+          <ul class="ingredient">
+            <li>olive oil</li>
+            <li>1 red bell pepper</li>
+            <li>1 onion</li>
+            <li>1 box of mushrooms</li>
+            <li>1 bag of spinach</li>
+            <li>8 eggs</li>
+            <li>salt</li>
+            <li>pepper</li>
+          </ul>
+        </li>
+      </ul>
+      <div class="export">
+        <button>Send to Email</button>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

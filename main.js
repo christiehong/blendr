@@ -1,4 +1,11 @@
+var recipeDictionary = {'Veggie Omelette':['olive oil', '1 red bell pepper', '1 onion', '1 box of mushrooms', '1 bag of baby spinach leaves', '8 eggs', 'salt', 'pepper'],
+												'Huevos Rancheros':['2 plum tomatoes', '1 onion', '1 jalapeno pepper', '1 bottle of Red Hot hot sauce', 'cumin', 'salt', 'pepper', 'olive oil', '1 can of black beans', '4 eggs', 'feta cheese', '1 bunch of cilantro'],
+												'Loaded Veggie Quiche':['1 unbaked pie crust', 'olive oil', '1 box of mushrooms', '1 tomato', '1 bunch of basil', 'salt', 'pepper', 'olive oil', 'milk', '4 eggs', 'Colby-Monterey Jack cheese'],
+												'Spinach Potato Frittata':['6 small red potatoes', 'olive oil', '1 bag of spinach', '1 head of garlic', '1 onion', '6 eggs', 'salt', 'pepper', 'milk', 'Cheddar cheese']
+											}
+
 jQuery(document).ready(function($){
+	console.log(window.location.pathname.split("/").pop());
 
   // open/close cart when cart is clicked
 	$('#slide-cart-trigger').on('click', function(event){
