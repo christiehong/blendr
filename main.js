@@ -6,7 +6,6 @@ var recipeDictionary = {'Veggie Omelette':['olive oil', '1 red bell pepper', '1 
 
 jQuery(document).ready(function($){
 
-	console.log('')
 
   // open/close cart when cart is clicked
 	$('#slide-cart-trigger').on('click', function(event){
@@ -38,6 +37,13 @@ jQuery(document).ready(function($){
       });
     }
   });
+
+	console.log($('.cart-items li').length);
+
+	// if cart is empty, insert "Your shopping list is currently empty."
+	if ($('.cart-items li').length == 0) {
+		$('#cart').eq(0).append("<p> Your shopping list is currently empty.");
+	}
 
 	// add recipe to cart
 	$('#add-to-cart').on('click', function() {

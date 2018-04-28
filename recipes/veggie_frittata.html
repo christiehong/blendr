@@ -5,7 +5,7 @@
   <meta charset="utf-8">
 
   <!-- Load style sheets -->
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="../main.css">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lobster">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Pacifico" />
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Didact+Gothic" />
@@ -15,7 +15,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <!-- Load scripts -->
-  <script src="main.js"></script>
+  <script src="../main.js"></script>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
   <header>
     <div>
       <!-- Blendr Logo -->
-      <a href="landing.html" class="logo">
+      <a href="../landing.html" class="logo">
         <h1>Blendr</h1>
       </a>
 
@@ -43,55 +43,50 @@
       <!-- Recipe -->
       <div class="column left">
 
-      <a href="searched.html"><button id="back">&#8592;</button></a>
+      <a href="../searched.html"><button id="back">&#8592;</button></a>
       <button id="add-to-cart"> &#43; </button>
 
         <div class="recipe-overview">
-          <h1>Veggie Omelette</h1>
+          <h1>Spinach Potato Frittata</h1>
           <div id="image">
-            <img src="images/vegan_omelette.jpg">
+            <img src="../images/veggie_frittata.jpg">
           </div>
           <div id="content">
             <h2>Difficulty:</h2> Easy <br>
-            <h2>Prep Time:</h2> 15 mins <br>
-            <h2>Calories:</h2> 400 calories <br>
-            <h2>Servings:</h2> 4 servings <br>
+            <h2>Prep Time:</h2> 30 mins <br>
+            <h2>Calories:</h2> 250 calories <br>
+            <h2>Servings:</h2> 8 servings <br>
           </div>
         </div>
         <div class="recipe-ingredients">
           <h1> Ingredients: </h1>
           <ul class="ingredients">
-            <li><span id=number>1</span> tsp olive oil</li>
-            <li><span id=number>1</span> chopped red bell pepper</li>
-            <li><span id=number>1</span> chopped onion</li>
-            <li><span id=number>1</span> box of mushrooms</li>
-            <li><span id=number>1</span> bag of baby spinach leaves</li>
-            <li><span id=number>8</span> eggs</li>
+            <li><span id=number>6</span> small red potatoes</li>
+            <li><span id=number>2</span> tbsp of olive oil</li>
+            <li><span id=number>1</span> bag of spinach </li>
+            <li><span id=number>1</span> garlic clove</li>
+            <li><span id=number>1</span> onion </li>
+            <li><span id=number>6</span> eggs</li>
             <li><span id=number>&frac12;</span> tsp of salt</li>
             <li><span id=number>&frac12;</span> tsp of pepper</li>
+            <li><span id=number>&frac12;</span> cup of milk</li>
+            <li><span id=number>1</span> cup Cheddar cheese</li>
+
+
         </div>
         <div class="recipe-directions">
           <h1> Directions: </h1>
           <ol class="directions">
             <li>
-              In a nonstick skillet, heat oil over medium-high heat.
-              Add bell pepper, onion and mushrooms to oil.
-              Cook 2 minutes, stirring frequently, until onion is tender.
-              Stir in spinach; continue cooking and stirring just until spinach wilts.
-              Remove vegetables from pan to small bowl.
+              Heat olive oil in a medium skillet over medium heat. Place potatoes in the skillet,
+              cover, and cook about 10 minutes, until tender but firm. Mix in spinach,
+              onion, and garlic. Season with salt and pepper. Continue cooking 1 to 2 minutes,
+               until spinach is wilted.
             </li>
             <li>
-              In medium bowl, beat egg product, water, salt and pepper with fork or whisk until
-              well mixed. Reheat same skillet over medium-high heat. Quickly pour egg mixture
-              into pan. While sliding pan back and forth rapidly over heat, quickly stir with
-              spatula to spread eggs continuously over bottom of pan as they thicken.
-              Let stand over heat a few seconds to lightly brown bottom of omelet.
-              Do not overcook; omelet will continue to cook after folding.
-            </li>
-            <li>
-              Place cooked vegetable mixture over half of omelet; garnish with more salt and pepper.
-              With spatula, fold other half of omelet over vegetables. Gently slide out
-              of pan onto plate. Serve immediately.
+              n a medium bowl, beat together eggs and milk. Pour into the skillet over the vegetables.
+              Sprinkle with Cheddar cheese. Reduce heat to low, cover, and cook 5 to 7 minutes, or
+              until eggs are firm.
             </li>
           </ol>
         </div>
@@ -99,9 +94,8 @@
 
       <!-- Cart -->
       <div class="column right" id="cart">
-        <h1>Cart</h1>
+        <h1>Shopping List</h1>
        <ul class="cart-items">
-         <p>Your cart is currently empty. </p>
           <!-- products added to the cart will be inserted here using JavaScript -->
        </ul>
        <button id="finish">Finish</button>

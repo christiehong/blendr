@@ -5,7 +5,7 @@
   <meta charset="utf-8">
 
   <!-- Load style sheets -->
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href= "../main.css">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lobster">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Pacifico" />
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Didact+Gothic" />
@@ -15,7 +15,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <!-- Load scripts -->
-  <script src="main.js"></script>
+  <script src="../main.js"></script>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
   <header>
     <div>
       <!-- Blendr Logo -->
-      <a href="landing.html" class="logo">
+      <a href="../landing.html" class="logo">
         <h1>Blendr</h1>
       </a>
 
@@ -43,34 +43,36 @@
       <!-- Recipe -->
       <div class="column left">
 
-      <a href="searched.html"><button id="back">&#8592;</button></a>
+      <a href="../searched.html"><button id="back">&#8592;</button></a>
       <button id="add-to-cart"> &#43; </button>
 
         <div class="recipe-overview">
-          <h1>Spinach Potato Frittata</h1>
+          <h1>Loaded Veggies Quiche</h1>
           <div id="image">
-            <img src="images/veggie_frittata.jpg">
+            <img src="../images/veggie_quiche.jpg">
           </div>
           <div id="content">
             <h2>Difficulty:</h2> Easy <br>
-            <h2>Prep Time:</h2> 30 mins <br>
-            <h2>Calories:</h2> 250 calories <br>
+            <h2>Prep Time:</h2> 45 mins <br>
+            <h2>Calories:</h2> 300 calories <br>
             <h2>Servings:</h2> 8 servings <br>
           </div>
         </div>
         <div class="recipe-ingredients">
           <h1> Ingredients: </h1>
           <ul class="ingredients">
-            <li><span id=number>6</span> small red potatoes</li>
-            <li><span id=number>2</span> tbsp of olive oil</li>
-            <li><span id=number>1</span> bag of spinach </li>
-            <li><span id=number>1</span> garlic clove</li>
-            <li><span id=number>1</span> onion </li>
-            <li><span id=number>6</span> eggs</li>
+            <li><span id=number>1</span> unbaked pie crust</li>
+            <li><span id=number>1</span> tsp of olive oil</li>
+            <li><span id=number>1</span> box of mushrooms </li>
+            <li><span id=number>2</span> zucchini</li>
+            <li><span id=number>1</span> tomato</li>
+            <li><span id=number>1</span> bunch of basil</li>
             <li><span id=number>&frac12;</span> tsp of salt</li>
             <li><span id=number>&frac12;</span> tsp of pepper</li>
+            <li><span id=number>2</span> tbsp olive oil</li>
             <li><span id=number>&frac12;</span> cup of milk</li>
-            <li><span id=number>1</span> cup Cheddar cheese</li>
+            <li><span id=number>4</span> eggs</li>
+            <li><span id=number>1</span> cup Colby-Monterey Jack cheese</li>
 
 
         </div>
@@ -78,15 +80,29 @@
           <h1> Directions: </h1>
           <ol class="directions">
             <li>
-              Heat olive oil in a medium skillet over medium heat. Place potatoes in the skillet,
-              cover, and cook about 10 minutes, until tender but firm. Mix in spinach,
-              onion, and garlic. Season with salt and pepper. Continue cooking 1 to 2 minutes,
-               until spinach is wilted.
+              Preheat oven to 400 degrees F
             </li>
             <li>
-              n a medium bowl, beat together eggs and milk. Pour into the skillet over the vegetables.
-              Sprinkle with Cheddar cheese. Reduce heat to low, cover, and cook 5 to 7 minutes, or
-              until eggs are firm.
+              Bake pie crust in preheated oven until firm, until 8 minutes. Remove crust
+              from oven and set aside. Reduce oven heat to 350 degrees F.
+            </li>
+            <li>
+              Heat olive oil in a large skillet over medium heat. Cook and stir onion,
+              green bell pepper, mushrooms, and zucchini in hot oil unti lsoft, 5 to 7
+              minutes. Remove vegetables from skillet and set aside.
+            </li>
+            <li>
+              Sprinkle tomato slices with flour and basil; cook in the skillet for 1
+              minute per side. Whisk eggs, milk, salt and pepper together in a small bowl.
+            </li>
+            <li>
+              Spread 1 cup Colby-Monterey Jack cheese in the bottom of pie crust. Layer
+              vegetable mixture over the cheese and top with the tomatoes. Pour egg
+              mixture into pie shell. Sprinkle remaining &frac12; cup cheese atop the quiche.
+            </li>
+            <li>
+              Bake in preheated oven until a knife inserted near the center comes out clean,
+              40 to 45 minutes. Cool 5 minutes before serving.
             </li>
           </ol>
         </div>
@@ -95,8 +111,6 @@
       <!-- Cart -->
       <div class="column right" id="cart">
         <h1>Shopping List</h1>
-        <p>Your shopping list is currently empty. </p>
-
        <ul class="cart-items">
           <!-- products added to the cart will be inserted here using JavaScript -->
        </ul>
