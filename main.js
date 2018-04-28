@@ -69,7 +69,11 @@ jQuery(document).ready(function($){
 	$('.cart-items').eq(0).on('click', '#remove-recipe', function() {
 		event.preventDefault();
 		$(event.target).parents('li').addClass('toDelete');
+		var recipeName = $(event.target).parents('li').children()[0];
+		var strippedRecipeName = $("<h3>").html(recipeName).text();
+		recipesInCart.pop(strippedRecipeName);
 		$('.cart-items').eq(0).find('.toDelete').remove();
+
 	});
 
 	// open final check modal
