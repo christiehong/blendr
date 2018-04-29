@@ -3,10 +3,24 @@ var huevos_rancheros = {'Huevos Rancheros':['2 plum tomatoes', '1 onion', '1 jal
 var veggie_quiche = {'Loaded Veggie Quiche':['1 unbaked pie crust', 'olive oil', '1 box of mushrooms', '1 tomato', '1 bunch of basil', 'salt', 'pepper', 'olive oil', 'milk', '4 eggs', 'Colby-Monterey Jack cheese']}
 var veggie_frittata = {'Spinach Potato Frittata':['6 small red potatoes', 'olive oil', '1 bag of spinach', '1 head of garlic', '1 onion', '6 eggs', 'salt', 'pepper', 'milk', 'Cheddar cheese']}
 
-var recipesInCart = [];
+Storage.prototype.setObj = function(key, obj) {
+    return this.setItem(key, JSON.stringify(obj))
+};
+Storage.prototype.getObj = function(key) {
+    return JSON.parse(this.getItem(key))
+};
+
+var recipesInCart = []
 
 jQuery(document).ready(function($){
+	// if cart is empty, insert "Your shopping list is currently empty."
+	if (localStorage.getObj("recipesInCart").length == 0) {
+		$('#cart').eq(0).append("<p> Your shopping list is currently empty.");
+		localStorage.setObj("recipesInCart", recipesInCart);
 
+	} else {
+		addRecipes();
+	}
 
   // open/close cart when cart is clicked
 	$('#slide-cart-trigger').on('click', function(event){
@@ -39,20 +53,12 @@ jQuery(document).ready(function($){
     }
   });
 
-	console.log($('.cart-items li').length);
-
-	// if cart is empty, insert "Your shopping list is currently empty."
-	if ($('.cart-items li').length == 0 && recipesInCart.length == 0) {
-		$('#cart').eq(0).append("<p> Your shopping list is currently empty.");
-	}
-
 	// add recipe to cart
 	$('#add-to-cart').on('click', function() {
 		event.preventDefault();
 		var page = window.location.pathname.split("/").pop();
 
 		$('#cart').eq(0).find('p').remove();
-		console.log(page);
 		if (page == "veggie_omelette.html") {
 			recipesInCart.push(veggie_omelette);
 		} else if (page == "huevos_rancheros.html") {
@@ -62,6 +68,8 @@ jQuery(document).ready(function($){
 		} else if (page == "veggie_quiche.html") {
 			recipesInCart.push(veggie_quiche);
 		}
+		localStorage.setObj("recipesInCart", recipesInCart);
+
 		addRecipes();
 	});
 
@@ -71,8 +79,14 @@ jQuery(document).ready(function($){
 		$(event.target).parents('li').addClass('toDelete');
 		var recipeName = $(event.target).parents('li').children()[0];
 		var strippedRecipeName = $("<h3>").html(recipeName).text();
+
 		recipesInCart.pop(strippedRecipeName);
+		localStorage.setObj("recipesInCart", recipesInCart);
 		$('.cart-items').eq(0).find('.toDelete').remove();
+
+		if (localStorage.getObj("recipesInCart").length == 0) {
+			$('#cart').eq(0).append("<p> Your shopping list is currently empty.");
+		}
 
 	});
 
@@ -83,11 +97,12 @@ jQuery(document).ready(function($){
 
 	$(".close").on('click', function() {
 		$('.modal').hide();
-	})
+	});
 
 });
 
 function addRecipes() {
+	recipesInCart = localStorage.getObj("recipesInCart");
 	for (var i=0; i < recipesInCart.length; i++) {
 		recipeName = Object.keys(recipesInCart[i])[0];
 		var recipeAdded = '<li class="recipe-name"><h3>' + recipeName + '</h3><i id="remove-recipe" class="fas fa-trash-alt"></i><ul class="ingredient">';
