@@ -22,22 +22,33 @@ jQuery(document).ready(function($){
 		addRecipes();
 	}
 
+	if (window.location.pathname.split("/").pop() == "landing.html") {
+		$("#cart").hide();
+	}
+
+
+
   // open/close cart when cart is clicked
 	$('#slide-cart-trigger').on('click', function(event){
 		event.preventDefault();
 
+		// add slide-cart class
+		$("#cart").addClass("slide-cart");
+
     // close cart
-    if ($('#slide-cart').hasClass('speed-in')) {
-      $('#slide-cart').removeClass('speed-in').one('transitionend', function() {
+    if ($('.slide-cart').hasClass('speed-in')) {
+      $('.slide-cart').removeClass('speed-in').one('transitionend', function() {
         $('body').removeClass('overflow-hidden');
       });
+			$('#cart').hide();
       $('#shadow-layer').removeClass('is-visible');
     }
 
     // open cart
     else {
-      $('#slide-cart').addClass('speed-in').one('transitionend', function() {
-        $('body').addClass('overflow-hidden');
+			$('#cart').show();
+      $('.slide-cart').addClass('speed-in').one('transitionend', function() {
+				$('body').addClass('overflow-hidden');
       });
       $('#shadow-layer').addClass('is-visible');
     }
@@ -46,8 +57,8 @@ jQuery(document).ready(function($){
   // close cart when outside of cart is clicked
   $('#shadow-layer').on('click', function() {
     $('#shadow-layer').removeClass('is-visible');
-    if ($('#slide-cart').hasClass('speed-in')) {
-      $('#slide-cart').removeClass('speed-in').one('transitionend', function() {
+    if ($('.slide-cart').hasClass('speed-in')) {
+      $('.slide-cart').removeClass('speed-in').one('transitionend', function() {
         $('body').removeClass('overflow-hidden');
       });
     }
@@ -92,6 +103,7 @@ jQuery(document).ready(function($){
 
 	// open final check modal
 	$("#finish").on('click', function() {
+		console.log("meow");
 		$('.modal').show();
 		recipesInCart = localStorage.getObj("recipesInCart");
 		for (var i=0; i < recipesInCart.length; i++) {
@@ -116,13 +128,10 @@ jQuery(document).ready(function($){
 
 function addRecipes() {
 	recipesInCart = localStorage.getObj("recipesInCart");
-	// console.log(recipesInCart);
 	for (var i=0; i < recipesInCart.length; i++) {
 		recipeName = Object.keys(recipesInCart[i])[0];
-		// console.log(recipeName);
 		var recipeAdded = '<li class="recipe-name"><h3>' + recipeName + '</h3><i id="remove-recipe" class="fas fa-trash-alt"></i><ul class="ingredient">';
 		ingredients = (recipesInCart[i][recipeName]);
-		// console.log(ingredients);
 		for (var j=0; j < ingredients.length; j++) {
 			recipeAdded += "<li>" + ingredients[j] + "</li>";
 		}
@@ -130,6 +139,5 @@ function addRecipes() {
 		$('.cart-items').eq(0).prepend(recipeAdded);
 
 	}
-	// console.log(recipeAdded);
 
 }
