@@ -101,9 +101,10 @@ jQuery(document).ready(function($){
 			for (var j=0; j < ingredients.length; j++) {
 				recipeAdded += "<li>" + ingredients[j] + "</li>";
 			}
-			recipeAdded += "</ul></li>"
+			recipeAdded += "</ul></li>";
+			$('.shopping-list').eq(0).prepend(recipeAdded);
+
 		}
-		$('.shopping-list').eq(0).prepend(recipeAdded);
 
 	});
 
@@ -115,15 +116,20 @@ jQuery(document).ready(function($){
 
 function addRecipes() {
 	recipesInCart = localStorage.getObj("recipesInCart");
+	// console.log(recipesInCart);
 	for (var i=0; i < recipesInCart.length; i++) {
 		recipeName = Object.keys(recipesInCart[i])[0];
+		// console.log(recipeName);
 		var recipeAdded = '<li class="recipe-name"><h3>' + recipeName + '</h3><i id="remove-recipe" class="fas fa-trash-alt"></i><ul class="ingredient">';
 		ingredients = (recipesInCart[i][recipeName]);
+		// console.log(ingredients);
 		for (var j=0; j < ingredients.length; j++) {
 			recipeAdded += "<li>" + ingredients[j] + "</li>";
 		}
 		recipeAdded += "</ul></li>"
+		$('.cart-items').eq(0).prepend(recipeAdded);
+
 	}
-	$('.cart-items').eq(0).prepend(recipeAdded);
+	// console.log(recipeAdded);
 
 }
