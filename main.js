@@ -93,6 +93,18 @@ jQuery(document).ready(function($){
 	// open final check modal
 	$("#finish").on('click', function() {
 		$('.modal').show();
+		recipesInCart = localStorage.getObj("recipesInCart");
+		for (var i=0; i < recipesInCart.length; i++) {
+			recipeName = Object.keys(recipesInCart[i])[0];
+			var recipeAdded = '<li class="recipe-name"><h3>' + recipeName + '</h3><ul class="ingredient">';
+			ingredients = (recipesInCart[i][recipeName]);
+			for (var j=0; j < ingredients.length; j++) {
+				recipeAdded += "<li>" + ingredients[j] + "</li>";
+			}
+			recipeAdded += "</ul></li>"
+		}
+		$('.shopping-list').eq(0).prepend(recipeAdded);
+
 	});
 
 	$(".close").on('click', function() {
