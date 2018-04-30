@@ -22,11 +22,10 @@ jQuery(document).ready(function($){
 		addRecipes();
 	}
 
-	if (window.location.pathname.split("/").pop() == "landing.html") {
+	var page = window.location.pathname.split("/").pop();
+	if (page == "landing.html" || page == "searched.html") {
 		$("#cart").hide();
 	}
-
-
 
   // open/close cart when cart is clicked
 	$('#slide-cart-trigger').on('click', function(event){
@@ -62,6 +61,7 @@ jQuery(document).ready(function($){
         $('body').removeClass('overflow-hidden');
       });
     }
+		$('#cart').hide();
   });
 
 	// add recipe to cart
@@ -90,10 +90,10 @@ jQuery(document).ready(function($){
 		$(event.target).parents('li').addClass('toDelete');
 		var recipeName = $(event.target).parents('li').children()[0];
 		var strippedRecipeName = $("<h3>").html(recipeName).text();
-
 		recipesInCart.pop(strippedRecipeName);
 		localStorage.setObj("recipesInCart", recipesInCart);
 		$('.cart-items').eq(0).find('.toDelete').remove();
+		console.log(localStorage.getObj("recipesInCart"));
 
 		if (localStorage.getObj("recipesInCart").length == 0) {
 			$('#cart').eq(0).append("<p> Your shopping list is currently empty.");
@@ -103,7 +103,6 @@ jQuery(document).ready(function($){
 
 	// open final check modal
 	$("#finish").on('click', function() {
-		console.log("meow");
 		$('.modal').show();
 		recipesInCart = localStorage.getObj("recipesInCart");
 		for (var i=0; i < recipesInCart.length; i++) {
@@ -127,6 +126,7 @@ jQuery(document).ready(function($){
 });
 
 function addRecipes() {
+	$('.cart-items').eq(0).html("");
 	recipesInCart = localStorage.getObj("recipesInCart");
 	for (var i=0; i < recipesInCart.length; i++) {
 		recipeName = Object.keys(recipesInCart[i])[0];

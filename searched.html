@@ -24,14 +24,11 @@
       <a href="landing.html" class="logo">
         <h1>Blendr</h1>
       </a>
-			<!--
-			<div class=search>
 
-			</div>
-			Search bar -->
 			<div class="searching">
 				<input type="text" placeholder="try sandwiches ... "><a href="searched.html"><i id="search-icon" class="fas fa-search"></i></a>
 			</div>
+
 			<!-- Navigation -->
       <nav id="main-navigation">
 				<a href="#"><i class="fas fa-user-circle fa-lg"></i></a>
@@ -110,7 +107,6 @@
 		<div class="results-show">
 
 			<div class="recipe-overview">
-<!-- 				<button id="add-to-cart"> &#43; </button> -->
 				<a href="recipes/veggie_omelette.html" class="click">
 					<h1 class="clickable_header">Veggie Omelette</h1>
 					<div id="image">
@@ -127,7 +123,6 @@
 			</div>
 
 			<div class="recipe-overview" style="background-color:var(--light-gray)">
-				<!-- <button id="add-to-cart"> &#43; </button> -->
 				<a href="recipes/veggie_quiche.html" class="click">
 					<h1>Loaded Veggie Quiche</h1>
 					<div id="image">
@@ -143,7 +138,6 @@
 			</div>
 
 			<div class="recipe-overview">
-				<!-- <button id="add-to-cart"> &#43; </button> -->
 				<a href="recipes/huevos_rancheros.html" class="click">
 					<h1>Huevos Rancheros</h1>
 					<div id="image">
@@ -159,7 +153,6 @@
 			</div>
 
 			<div class="recipe-overview" style="background-color:var(--light-gray)">
-				<!-- <button id="add-to-cart"> &#43; </button> -->
 				<a href="recipes/veggie_frittata.html" class="click">
 					<h1>Spinach Potato Frittata</h1>
 					<div id="image">
@@ -174,6 +167,32 @@
 				</div>
 			</div>
 
+		</div>
+	</div>
+
+	<div id="shadow-layer"></div>
+
+	<!-- Cart -->
+	<div id="cart">
+		<h1>Shopping List</h1>
+		<ul class="cart-items">
+			<!-- products added to the cart will be inserted here using JavaScript -->
+		</ul>
+		<button id="finish">Finish</button>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h1>Hello!</h1>
+			<h2>Check your shopping list before exporting:</h2>
+			<ul class="shopping-list">
+				<!-- products added to the cart will be inserted here using JavaScript -->
+			</ul>
+			<div class="export">
+				<button>Send to Email</button>
+			</div>
 		</div>
 	</div>
 
