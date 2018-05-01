@@ -15,6 +15,8 @@ var favoritedRecipes = [];
 
 jQuery(document).ready(function($){
 
+  console.log(localStorage.getObj("favoritedRecipes"));
+
 	// if cart is empty, insert "Your shopping list is currently empty."
 	if (localStorage.getObj("recipesInCart").length == 0) {
 		$('#cart').eq(0).append("<p> Your shopping list is currently empty.");
@@ -132,6 +134,7 @@ jQuery(document).ready(function($){
   $("#favorite").on('click', function() {
     var page = window.location.pathname.split("/").pop();
     alreadyFavorited = false;
+    favoritedRecipes = localStorage.getObj("favoritedRecipes");
 
     for (var i=0; i < localStorage.getObj("favoritedRecipes").length; i++) {
       if (localStorage.getObj("favoritedRecipes")[i] == page) {
@@ -145,7 +148,6 @@ jQuery(document).ready(function($){
       $('#favorite').addClass("fas fa-heart fa-2x");
 
       event.preventDefault();
-
   		if (page == "veggie_omelette.html") {
   			favoritedRecipes.push("veggie_omelette.html");
   		} else if (page == "huevos_rancheros.html") {
@@ -163,7 +165,12 @@ jQuery(document).ready(function($){
 
     // de-favorite a recipe
     else if ($('#favorite').hasClass('far fa-heart fa-2x fas') && alreadyFavorited) {
-      favoritedRecipes.pop(page);
+      var favoritedRecipes = localStorage.getObj("favoritedRecipes");
+      for (var i=0; i < favoritedRecipes.length; i++) {
+        if (favoritedRecipes[i] == page) {
+          favoritedRecipes.pop(page);
+        }
+      }
       localStorage.setObj("favoritedRecipes", favoritedRecipes);
 
       $("#favorite").removeClass("fas fa-heart fa-2x");
