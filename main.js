@@ -180,8 +180,7 @@ jQuery(document).ready(function($){
     }
   });
 
-  $("#finish").on('click', function() {
-    localStorage.setObj("favoritedRecipes", []);
+  $(".export").on('click', function() {
     localStorage.setObj("recipesInCart", []);
   });
 
