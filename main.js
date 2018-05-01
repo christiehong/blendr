@@ -142,8 +142,10 @@ jQuery(document).ready(function($){
       }
     }
 
+    console.log($('#favorite').hasClass("far fa-heart fa-2x"), $('#favorite').hasClass('fas fa-heart fa-2x'), alreadyFavorited);
+
     // favorite a recipe
-    if ($('#favorite').hasClass("far fa-heart fa-2x") && alreadyFavorited == false) {
+    if (($('#favorite').hasClass("far fa-heart fa-2x") && alreadyFavorited == false) || ($('#favorite').hasClass("fas fa-heart fa-2x") && alreadyFavorited == false)) {
       $("#favorite").removeClass("far fa-heart fa-2x");
       $('#favorite').addClass("fas fa-heart fa-2x");
 
@@ -164,7 +166,7 @@ jQuery(document).ready(function($){
     }
 
     // de-favorite a recipe
-    else if ($('#favorite').hasClass('far fa-heart fa-2x fas') && alreadyFavorited) {
+    else if (($('#favorite').hasClass('far fa-heart fa-2x fas') && alreadyFavorited) || ($('#favorite').hasClass("fas fa-heart fa-2x") && alreadyFavorited)) {
       var favoritedRecipes = localStorage.getObj("favoritedRecipes");
       for (var i=0; i < favoritedRecipes.length; i++) {
         if (favoritedRecipes[i] == page) {
