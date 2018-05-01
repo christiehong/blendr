@@ -10,17 +10,24 @@ Storage.prototype.getObj = function(key) {
     return JSON.parse(this.getItem(key))
 };
 
-var recipesInCart = []
+var recipesInCart = [];
+var favoritedRecipes = [];
 
 jQuery(document).ready(function($){
+
 	// if cart is empty, insert "Your shopping list is currently empty."
 	if (localStorage.getObj("recipesInCart").length == 0) {
 		$('#cart').eq(0).append("<p> Your shopping list is currently empty.");
 		localStorage.setObj("recipesInCart", recipesInCart);
-
-	} else {
+	} else { // if cart isn't full, then put in the recipes that are stored
 		addRecipes();
 	}
+
+  if (localStorage.getObj("favoritedRecipes").length == 0) {
+    localStorage.setObj("favoritedRecipes", favoritedRecipes);
+  } else {
+    addToFavorites();
+  }
 
 	var page = window.location.pathname.split("/").pop();
 	if (page == "landing.html" || page == "searched.html") {
@@ -93,7 +100,6 @@ jQuery(document).ready(function($){
 		recipesInCart.pop(strippedRecipeName);
 		localStorage.setObj("recipesInCart", recipesInCart);
 		$('.cart-items').eq(0).find('.toDelete').remove();
-		console.log(localStorage.getObj("recipesInCart"));
 
 		if (localStorage.getObj("recipesInCart").length == 0) {
 			$('#cart').eq(0).append("<p> Your shopping list is currently empty.");
@@ -114,20 +120,69 @@ jQuery(document).ready(function($){
 			}
 			recipeAdded += "</ul></li>";
 			$('.shopping-list').eq(0).prepend(recipeAdded);
-
 		}
-
 	});
 
+  // close final check modal
 	$(".close").on('click', function() {
 		$('.modal').hide();
 	});
 
+  // favoriting a recipe
+  $("#favorite").on('click', function() {
+    var page = window.location.pathname.split("/").pop();
+    alreadyFavorited = false;
+
+    for (var i=0; i < localStorage.getObj("favoritedRecipes").length; i++) {
+      if (localStorage.getObj("favoritedRecipes")[i] == page) {
+        alreadyFavorited = true;
+      }
+    }
+
+    // favorite a recipe
+    if ($('#favorite').hasClass("far fa-heart fa-2x") && alreadyFavorited == false) {
+      $("#favorite").removeClass("far fa-heart fa-2x");
+      $('#favorite').addClass("fas fa-heart fa-2x");
+
+      event.preventDefault();
+
+  		if (page == "veggie_omelette.html") {
+  			favoritedRecipes.push("veggie_omelette.html");
+  		} else if (page == "huevos_rancheros.html") {
+  			favoritedRecipes.push("huevos_rancheros.html");
+  		} else if (page == "veggie_frittata.html") {
+  			favoritedRecipes.push("veggie_frittata.html");
+  		} else if (page == "veggie_quiche.html") {
+  			favoritedRecipes.push("veggie_quiche.html");
+  		}
+  		localStorage.setObj("favoritedRecipes", favoritedRecipes);
+
+      addToFavorites();
+
+    }
+
+    // de-favorite a recipe
+    else if ($('#favorite').hasClass('far fa-heart fa-2x fas') && alreadyFavorited) {
+      favoritedRecipes.pop(page);
+      localStorage.setObj("favoritedRecipes", favoritedRecipes);
+
+      $("#favorite").removeClass("fas fa-heart fa-2x");
+      $('#favorite').addClass("far fa-heart fa-2x");
+    }
+  });
+
+  $("#finish").on('click', function() {
+    localStorage.setObj("favoritedRecipes", []);
+    localStorage.setObj("recipesInCart", []);
+  });
+
 });
 
+// helper function to store added recipes
 function addRecipes() {
 	$('.cart-items').eq(0).html("");
 	recipesInCart = localStorage.getObj("recipesInCart");
+
 	for (var i=0; i < recipesInCart.length; i++) {
 		recipeName = Object.keys(recipesInCart[i])[0];
 		var recipeAdded = '<li class="recipe-name"><h3>' + recipeName + '</h3><i id="remove-recipe" class="fas fa-trash-alt"></i><ul class="ingredient">';
@@ -137,7 +192,19 @@ function addRecipes() {
 		}
 		recipeAdded += "</ul></li>"
 		$('.cart-items').eq(0).prepend(recipeAdded);
-
 	}
+}
 
+// helper function to store favorited recipes
+function addToFavorites() {
+  var page = window.location.pathname.split("/").pop();
+  favoritedRecipes = localStorage.getObj("favoritedRecipes");
+
+  for (var i=0; i < favoritedRecipes.length; i++) {
+    recipeName = favoritedRecipes[i];
+    if (recipeName == page) {
+      $('#favorite').addClass("fas fa-heart fa-2x");
+
+    }
+  }
 }
