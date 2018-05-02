@@ -62,9 +62,11 @@ function levelSelect(ele) {
 	for (i = 0; i < 3; i++) {
 		if (($(".level")[i].innerHTML) != level) {
 			$(".level")[i].style.backgroundColor = "white"; 
+			$(".level")[i].style.color = "lightgray";
 		}
 		else {
 			$(".level")[i].style.backgroundColor = "var(--light-purple)";
+			$(".level")[i].style.color = "white";
 		}
 	}
 }
