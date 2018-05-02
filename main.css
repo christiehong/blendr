@@ -672,8 +672,8 @@ txt{
   margin-top: 15vh;
   margin-left: calc((100vw - 65vw)/2);
   border-radius: 5px;
-  padding-top: 20px;
-  padding-left: 20px;
+  padding-top: 25px;
+  padding-left: 25px;
   font-size: 2em;
   background-color: rgba(255,255,255,0.8);
 
@@ -691,7 +691,11 @@ txt{
   border: 0;
   outline: 0;
   background: transparent;
-  border-bottom: 1px solid black;
+  border-bottom: 1.5px solid darkgray;
+}
+
+.signup:focus {
+  border-bottom: 3px solid #a080dd;
 }
 
 #allergy-input {
@@ -756,6 +760,7 @@ txt{
   margin-top: 30px;
   margin-left: 10px;
   margin-bottom: 35px;
+  cursor: pointer;
 }
 
 .level {
