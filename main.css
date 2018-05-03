@@ -716,18 +716,17 @@ txt{
   border-style: none;
   color: white;
   font-size: 30px;
-  top: 450px;
-  left: 0px;
+  top: 88%;
   padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 0px;
 }
 
 #prev{
-  left: 35px;
+  left: 2.5%;
 }
 
 #next {
-  left: 740px;
+  left: 93%;
 }
 
 .tags {
