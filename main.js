@@ -98,6 +98,14 @@ jQuery(document).ready(function($){
 		$(event.target).parents('li').addClass('toDelete');
 		var recipeName = $(event.target).parents('li').children()[0];
 		var strippedRecipeName = $("<h3>").html(recipeName).text();
+
+    for (var i=0; i < recipesInCart.length; i++) {
+      recipe = Object.keys(recipesInCart[i])[0];
+      if (recipe == strippedRecipeName) {
+        recipesInCart.pop
+      }
+    }
+
 		recipesInCart.pop(strippedRecipeName);
 		localStorage.setObj("recipesInCart", recipesInCart);
 		$('.cart-items').eq(0).find('.toDelete').remove();
@@ -111,7 +119,9 @@ jQuery(document).ready(function($){
 	// open final check modal
 	$("#finish").on('click', function() {
 		$('.modal').show();
+    $('.shopping-list').eq(0).html("");
 		recipesInCart = localStorage.getObj("recipesInCart");
+
 		for (var i=0; i < recipesInCart.length; i++) {
 			recipeName = Object.keys(recipesInCart[i])[0];
 			var recipeAdded = '<li class="recipe-name"><h3>' + recipeName + '</h3><ul class="ingredient">';
@@ -140,8 +150,6 @@ jQuery(document).ready(function($){
         alreadyFavorited = true;
       }
     }
-
-    console.log($('#favorite').hasClass("far fa-heart fa-2x"), $('#favorite').hasClass('fas fa-heart fa-2x'), alreadyFavorited);
 
     // favorite a recipe
     if (($('#favorite').hasClass("far fa-heart fa-2x") && alreadyFavorited == false) || ($('#favorite').hasClass("fas fa-heart fa-2x") && alreadyFavorited == false)) {
