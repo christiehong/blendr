@@ -28,7 +28,7 @@ function showSlide(n) {
 function addAllergy() {
 	var text = $('#allergy-input').val()
 	if (text != "") {
-		$("#allergy-tags").append("<div class = 'tag-container'><div class = 'tag'>"+text+"</div><div class ='tag' id='remove' onclick='removeAllergy(this)'><i class='fas fa-times'></i></div></div>")
+		$("#allergy-tags").append("<div class = 'tag-container'><div class = 'tag'>"+text+"</div><div class ='tag' id='remove' onclick='removeAllergy(this)'><i class='fas fa-times-circle'></i></div></div>")
 		allergies.add(text)
 		$('#allergy-input').val('')
 	}
@@ -37,7 +37,7 @@ function addAllergy() {
 function addPreference() {
 	var text = $('#preferences-input').val()
 	if (text != "") {
-		$("#pref-tags").append("<div class = 'tag-container'><div class = 'tag'>"+text+"</div><div class ='tag' id='remove' onclick='removePref(this)'><i class='fas fa-times'></i></div></div>")
+		$("#pref-tags").append("<div class = 'tag-container'><div class = 'tag'>"+text+"</div><div class ='tag' id='remove' onclick='removePref(this)'><i class='fas fa-times-circle'></i></div></div>")
 		preferences.add(text)
 		$('#preferences-input').val('')
 	}
@@ -62,9 +62,11 @@ function levelSelect(ele) {
 	for (i = 0; i < 3; i++) {
 		if (($(".level")[i].innerHTML) != level) {
 			$(".level")[i].style.backgroundColor = "white"; 
+			$(".level")[i].style.color = "lightgray";
 		}
 		else {
 			$(".level")[i].style.backgroundColor = "var(--light-purple)";
+			$(".level")[i].style.color = "white";
 		}
 	}
 }

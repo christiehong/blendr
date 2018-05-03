@@ -664,18 +664,19 @@ txt{
 
 /* ----- TUTORIAL ---- */
 .tutorial-container {
-  border: solid 2px gray;
-  box-shadow: 10px 10px lightgray;
+  /*border: solid 2px gray;*/
+  /*box-shadow: 10px 10px lightgray;*/
   position: relative;
   width: 65vw;
   height: 75vh;
   margin-top: 15vh;
   margin-left: calc((100vw - 65vw)/2);
-  border-radius: 20px;
-  padding-top: 20px;
-  padding-left: 20px;
+  border-radius: 5px;
+  padding-top: 25px;
+  padding-left: 25px;
   font-size: 2em;
-  background-color: #efe6ff;
+  background-color: rgba(255,255,255,0.8);
+
 }
 
 .tutorial-description {
@@ -687,6 +688,22 @@ txt{
   line-height: 1.5;
   margin-top: 10px;
   margin-bottom: 10px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1.5px solid darkgray;
+}
+
+.signup:focus {
+  border-bottom: 3px solid #a080dd;
+}
+
+#allergy-input {
+  width: 50%;
+}
+
+#preferences-input {
+  width: 50%;
 }
 
 
@@ -699,18 +716,17 @@ txt{
   border-style: none;
   color: white;
   font-size: 30px;
-  top: 450px;
-  left: 0px;
+  top: 88%;
   padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 0px;
 }
 
 #prev{
-  left: 35px;
+  left: 2.5%;
 }
 
 #next {
-  left: 740px;
+  left: 93%;
 }
 
 .tags {
@@ -743,6 +759,7 @@ txt{
   margin-top: 30px;
   margin-left: 10px;
   margin-bottom: 35px;
+  cursor: pointer;
 }
 
 .level {
@@ -754,6 +771,7 @@ txt{
   line-height: 250px;
   border: 1px solid lightgray;
   font-size: 2em;
+  font-size: 3vw;
   color: darkgray;
   background-color: white;
 }
@@ -791,6 +809,10 @@ txt{
 .name {
   display: inline-block;
 }
+
+
+
+
 
 
 /* ----- FOOTER -----  */

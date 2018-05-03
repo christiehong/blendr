@@ -16,13 +16,22 @@
   	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Pacifico" />
   	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Didact+Gothic" />
   	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+  	<style>
+  		body {
+  			background-image: url("images/background1.jpg");
+  			background-position: center;
+    		background-repeat: no-repeat;
+    		background-size: cover;
+  		}
+  	</style>
 </head>
 
 <body onload="showSlide(1)">
+
+
 	<div class = "tutorial-container">
 	<div class = "tutorial" id = "slide1">
-		Welcome to <span style="font-family: 'Pacifico'; color: var(--dark-purple);">Blendr</span>!
-		<br>
+		<h2>Welcome to <span style="font-family: 'Pacifico'; color: var(--dark-purple);">Blendr</span>!</h1>
 		Join the <span style="font-family: 'Pacifico'; color: var(--dark-purple);">Blendr</span> community.
 		<form>
 		<input type="text" class="signup" placeholder="name" id = "name_input">
@@ -47,7 +56,7 @@
 		Tell us about your ALLERGIES.
 		<div class="tutorial-description">
 			<br>
-		<input type="text" placeholder="try dairy free ... " id = "allergy-input">
+		<input type="text" placeholder="try dairy free ... " class = "signup" id = "allergy-input">
         <i id="search-icon" class="fas fa-search" onclick= "addAllergy()" ></i>
     	</div>
     	<br>
@@ -64,7 +73,7 @@
 		Tell us about your DIETARY PREFERENCES.
 		<div class="tutorial-description">
 			<br>
-		<input type="text" placeholder="try keto ... " id = "preferences-input">
+		<input type="text" placeholder="try keto ... " class ="signup" id = "preferences-input">
         <i id="search-icon" class="fas fa-search" onclick = "addPreference()"></i>
     	</div>
     	<br>
@@ -82,9 +91,9 @@
 		<br>
 		Tell us about your COOKING LEVEL.
 		<div class = "experience-container">
-			<div class = "level" onclick = "levelSelect(this)">EASY</div>
-			<div class = "level" onclick = "levelSelect(this)">MEDIUM</div>
-			<div class = "level" onclick = "levelSelect(this)">HARD</div>
+			<div class = "level" onclick = "levelSelect(this)">BEGINNER</div>
+			<div class = "level" onclick = "levelSelect(this)">INTERMEDIATE</div>
+			<div class = "level" onclick = "levelSelect(this)">EXPERT</div>
 		</div>
 
 		<button type = "button" class = "nav" id ="prev" onclick = "slide(-1)" ><i class="fas fa-chevron-left"></i></button>
@@ -99,7 +108,7 @@
 		Let's get you started.
 		<br>
 		<div id = "submit-container">
-		<button type = "button" id = "submit"><a href="landing.html">Done</a></button>
+		<button type = "button" id = "submit" onclick = "location.href = 'landing.html'">done</button>
 		</div>
 	</div>
 	</div>

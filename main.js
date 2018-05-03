@@ -15,15 +15,17 @@ var favoritedRecipes = [];
 
 jQuery(document).ready(function($){
 
+  console.log(localStorage.getObj("favoritedRecipes"));
+
 	// if cart is empty, insert "Your shopping list is currently empty."
-	if (localStorage.getObj("recipesInCart") == null || localStorage.getObj("recipesInCart").length == 0) {
+	if (localStorage.getObj("recipesInCart").length == 0) {
 		$('#cart').eq(0).append("<p> Your shopping list is currently empty.");
 		localStorage.setObj("recipesInCart", recipesInCart);
 	} else { // if cart isn't full, then put in the recipes that are stored
 		addRecipes();
 	}
 
-  if (localStorage.getObj("favoritedRecipes")== null) {
+  if (localStorage.getObj("favoritedRecipes").length == 0) {
     localStorage.setObj("favoritedRecipes", favoritedRecipes);
   } else {
     addToFavorites();
@@ -31,7 +33,6 @@ jQuery(document).ready(function($){
 
 	var page = window.location.pathname.split("/").pop();
 	if (page == "landing.html" || page == "searched.html") {
-    console.log("hi")
 		$("#cart").hide();
 	}
 
