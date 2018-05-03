@@ -731,7 +731,7 @@ txt{
 
 .tags {
   border: 1.5px solid var(--light-gray);
-  height: 160px;
+  height: 28%;
   width: 80%;
   background-color: white;
 }
