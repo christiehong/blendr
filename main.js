@@ -13,6 +13,19 @@ Storage.prototype.getObj = function(key) {
 var recipesInCart = [];
 var favoritedRecipes = [];
 
+//// Changed Added By Das
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("search-bar").addEventListener("keyup", function(event){
+    event.preventDefault();
+    if(event.keyCode == 13) {
+      document.getElementById("search-icon").click();
+    }
+  });
+});
+
+
+
+////
 jQuery(document).ready(function($){
 
   console.log(localStorage.getObj("favoritedRecipes"));
