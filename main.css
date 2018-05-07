@@ -419,6 +419,7 @@ i#favorite {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+
 }
 
 #past_lists_title{
@@ -430,7 +431,7 @@ i#favorite {
   color: var(--dark-purple);
   font-size: 250%;
   height: calc((100vh - 50px)/3);
-  align-items: center;
+  align-self: flex-column;
 }
 
 txt{
@@ -509,18 +510,32 @@ txt{
   color: var(--light-purple);
 }
 
-
 #one_list_title{
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 150px;
   font-family: 'Pacifico';
-  margin: 0;
   color: var(--dark-purple);
   font-size: 250%;
   height: calc((100vh - 50px)/4);
-  align-items: center;
+  align-items: flex-start;
 }
+
+#favorites_list{
+
+}
+
+#myInput {
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
+
 
 .one_list_row{
   display: flex;
@@ -568,7 +583,7 @@ txt{
 .minutes_button, .serves_button, .vegan_button{
   background-color: var(--dark-purple);
   color: white;
-  outline: 0px solid black;
+  border: 0px solid black;
   font-size: 15px;
   margin-left: 5px;
   margin-right: 5px;
@@ -596,7 +611,7 @@ txt{
 }
 
 .vegan_button{
-  width: 50px;
+  width: 70px;
   height: 60px;
   margin-right: 15px;
 }
