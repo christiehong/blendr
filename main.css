@@ -324,7 +324,7 @@ main button {
   padding-right: 10px;
 }
 
-i#favorite {
+#favorite {
   color: red;
 }
 
@@ -409,78 +409,6 @@ i#favorite {
   color: var(--dark-purple);
 }
 
-/* ----- MAIN for PAST LISTS ----- */
-
-
-/*
-#past_lists_title{
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-  font-family: 'Pacifico';
-  margin: 0;
-  color: var(--dark-purple);
-  font-size: 250%;
-  height: calc((100vh - 50px)/3);
-  align-self: flex-column;
-  align
-}
-
-txt{
-  font-size: 125%;
-  font-family: 'Didact Gothic';
-  margin-left: 8px;
-}
-
-#icon{
-  margin-top: 5px;
-  color: black;
-}
-
-#icon:hover{
-  color: black;
-}
-
-.f1 {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  height: calc((100vh - 50px)/16);
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.past_lists{
-  color: black;
-}
-
-.past_lists:hover{
-  text-decoration: underline;
-  color: black;
-}
-
-#past_lists_back{
-  position: absolute;
-  top: 75px;
-  left: 15px;
-  width: 60px;
-  height: 40px;
-  border-radius: 5px;
-  font-size: 150%;
-  color: black;
-}
-
-#past_list_back_href{
-  color: black;
-}
-
-#past_list_back_href:hover{
-  color: var(--light-purple);
-}
-*/
 
 /* ----- MAIN for ONE LIST ----- */
 
@@ -528,18 +456,29 @@ txt{
   /*align-items: flex-start;*/
 }
 
-/*#one_list_header{
+#ul_container{
   display: flex;
-  margin-top: 50px;
-  width: 100vw;
-  height: 300px;
-  align-items: center;
-  flex-direction: column;
-  /*align-items: space-between;*/
-}*/
+  justify-content: center;
+}
 
 #favorites_list{
+  justify-content: center;
+}
 
+#default_text_li{
+  justify-content: center;
+  align-items: center;
+}
+
+#default_text{
+  margin-top: 10vh;
+  margin-right: 4vw;
+  color: black;
+  self-align: center;
+}
+
+#default_text:hover{
+  color: black;
 }
 
 #myInput {
