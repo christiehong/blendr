@@ -558,7 +558,7 @@ txt{
 .one_list_row{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  /*justify-content: center;*/
   height: 35vh;
   width: 80vw;
   align-items: center;
