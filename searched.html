@@ -28,7 +28,10 @@
 
 			<div class="searching">
 				<!-- Added ID for search bar - Das -->
-				<input type="text" id="search-bar" placeholder="try sandwiches ... "><a href="searched.html"><i id="search-icon" class="fas fa-search"></i></a>
+				<input type="text" id="search-bar" placeholder="try sandwiches ... ">
+				<!-- <a href="searched.html"> -->
+					<i id="search-icon" class="fas fa-search" onclick="perform_search()"></i>
+				<!--</a> -->
 			</div>
 
 			<!-- Navigation -->
@@ -73,17 +76,18 @@
 			<div class="filter-servings">
 				<h2>Number of servings</h2>
 				<select name="servings" class="servings-dropdown">
+					<option>--</option>
 					<option>1</option>
 					<option>2</option>
 					<option>3</option>
-					<option>4</option>
-					<option>5+</option>
+					<option>4+</option>
 				</select>
 			</div>
 			<!-- filter-Difficulty -->
 			<div class="filter-difficulty">
 				<h2>Difficulty:</h2>
 				<select name="Difficulty" class="Difficulty-dropdown">
+					<option>All</option>
 					<option>Easy</option>
 					<option>Medium</option>
 					<option>Hard</option>
@@ -93,9 +97,9 @@
 			<div class="filter-cookware">
 				<h2>Available Cookware:</h2>
 				<div class="cookware-dropdown">
-					<input type="checkbox">pots</input><br>
-					<input type="checkbox">pans</input><br>
-					<input type="checkbox">oven</input><br>
+					<input type="checkbox" id="checkbox-pot">pots</input><br>
+					<input type="checkbox" id="checkbox-pan">pans</input><br>
+					<input type="checkbox" id="checkbox-oven">oven</input><br>
 				</div>
 			</div>
 		</div>
