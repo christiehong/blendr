@@ -422,6 +422,10 @@ main button {
   align-items: center;
 }
 
+#past_lists_column:hover{
+  cursor: initial;
+}
+
 #one_list_back{
   position: absolute;
   top: 75px;
@@ -444,6 +448,10 @@ main button {
   height: 700px;
 }
 
+#one_list_container:hover{
+  cursor: initial;
+}
+
 #one_list_title{
   display: flex;
   justify-content: center;
@@ -456,6 +464,10 @@ main button {
   /*align-items: flex-start;*/
 }
 
+#one_list_title:hover{
+  cursor: default;
+}
+
 #ul_container{
   display: flex;
   justify-content: center;
@@ -463,6 +475,10 @@ main button {
 
 #favorites_list{
   justify-content: center;
+}
+
+#favorites_list:hover{
+  cursor: initial;
 }
 
 #default_text_li{
@@ -479,6 +495,7 @@ main button {
 
 #default_text:hover{
   color: black;
+  cursor: initial;
 }
 
 #myInput {
@@ -502,6 +519,10 @@ main button {
   width: 80vw;
   align-items: center;
   border-bottom: 1px solid silver;
+}
+
+.one_list_row:hover{
+  cursor: initial;
 }
 
 .one_list_recipe{
