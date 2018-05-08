@@ -89,6 +89,20 @@ header h1 {
   padding-right: 10px;
 }
 
+#nav_bar_heart{
+  color: white;
+  background-size: 3px;
+  margin-right: -5px;
+}
+
+#favorites_nav_box:hover i{
+  color: var(--light-purple);
+}
+
+#favorites_nav_box:hover{
+  color: var(--light-purple);
+}
+
 #slide-cart-trigger {
   right: 0;
 }
