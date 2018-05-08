@@ -18,30 +18,6 @@
 
 		<!-- Load scripts -->
 		<script src="main.js"></script>
-    <script>
-    function favoritesSearchFunc() {
-    // Declare variables
-    var input = document.getElementById('myInput');
-    console.log(input);
-    var filter = input.value.toUpperCase();
-    console.log(filter);
-    var ul = document.getElementById("favorites_list");
-    console.log(ul);
-    var li = ul.getElementsByTagName('li');
-    console.log(li);
-
-    // Loop through all list items, and hide those who don't match the search query
-    for(var i = 0; i < li.length; i++) {
-        // a = li[i].getElementsByTagName("a")[0];
-        console.log(li[i].id);
-        if (li[i].id.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-    }
-    </script>
 
 	</head>
 	  <!-- Header -->
@@ -55,48 +31,24 @@
       <!-- Navigation -->
       <nav id="main-navigation">
         <a href="#"><i class="fas fa-user-circle fa-lg"></i></a>
-        <a href="past_lists.html"><i class="fas fa-clipboard-list fa-lg"></i> Favorite Recipes</a>
+        <a href="one_list.html"><i class="fas fa-clipboard-list fa-lg"></i> Favorite Recipes</a>
         <i id="slide-cart-trigger" class="fas fa-shopping-basket fa-lg"></i>
       </nav>
     </div>
   </header>
 
 <body>
-    <button id="one_list_back"><a id = "one_list_back_href" href="past_lists.html">&#8592;<a></button>
+    <a id = "one_list_back_href" href="landing.html"><button id="one_list_back">&#8592;</button><a>
 
   	<div id = "past_lists_column">
+<!--       <div id = "one_list_header"> -->
        <div id = "one_list_title">Your Favorite Recipes</div>
-      <input type="text" id="myInput" onkeyup="favoritesSearchFunc()" placeholder="Search for a favorite recipe..">
-
-      <ul style="list-style: none;" id = "favorites_list">
-  		<li id = "Veggie Omelette"><div class = "one_list_row">
-  			<img id = "omelette_pic" src="images/vegan_omelette.jpg">
-  			<div class = "one_list_recipe">
-  				<a href = "veggie_omelette.html" class = "veggie_recipe">Veggie Omelette</a>
-  				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star"></span>
-  			</div>
-  			<button class = "minutes_button" disabled>15 min</button>
-  			<button class = "serves_button" disabled>Serves 4</button>
-  			<button class = "vegan_button" disabled>Vegan</button>
-  		</div></li>
-  		<li id = "Veggie Stir-Fry"><div class = "one_list_row">
-  			<img id = "noodle_stir_fry_pic" src="images/noodle_stir_fry.jpg">
-  			<div class = "one_list_recipe">
-  				<font id = "noodle_recipe"> Veggie Stir-Fry</font>
-  				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star"></span>
-				<span class="fa fa-star"></span>
-  			</div>
-  			<button class = "minutes_button" disabled>15 min</button>
-  			<button class = "serves_button" disabled>Serves 4</button>
-  			<button class = "vegan_button" disabled>Vegan</button>
-  		</div></li></ul>
+      <input type="text" id="myInput" onkeyup="favoritesSearchFunc()" placeholder="Search for a favorite recipe..." autofocus>
+<!--       </div> -->
+      <div id = "one_list_container">
+      <div id = "ul_container">
+      <ul style="list-style: none;" class = "favorites_list_" id = "favorites_list">
+    </ul></div></div>
   	</div>
 </body>
 

@@ -3,6 +3,13 @@ var huevos_rancheros = {'Huevos Rancheros':['2 plum tomatoes', '1 onion', '1 jal
 var veggie_quiche = {'Loaded Veggie Quiche':['1 unbaked pie crust', '1 box of mushrooms', '1 tomato', '1 bunch of basil', 'salt', 'pepper', 'olive oil', 'milk', '4 eggs', 'Colby-Monterey Jack cheese']}
 var veggie_frittata = {'Spinach Potato Frittata':['6 small red potatoes', 'olive oil', '1 bag of spinach', '1 head of garlic', '1 onion', '6 eggs', 'salt', 'pepper', 'milk', 'Cheddar cheese']}
 
+
+var favorites = {'veggie_omelette.html': {'name': 'Veggie Omelette', 'time': '15 min', 'servings': 'Serves 1', 'dietary': 'Vegan', 'img': 'vegan_omelette', 'id': 'VeggieOmelette'},
+  'huevos_rancheros.html': {'name': 'Huevos Rancheros', 'time': '15 min', 'servings': 'Serves 2', 'dietary': 'Vegetarian', 'img': 'huevos_rancheros', 'id': 'HuevosRancheros'},
+  'veggie_quiche.html': {'name': 'Loaded Veggie Quiche', 'time': '45 min', 'servings': 'Serves 4', 'dietary': 'Vegetarian', 'img': 'veggie_quiche', 'id': 'LoadedVeggieQuiche'},
+  'veggie_frittata.html': {'name': 'Spinach Potato Frittata', 'time': '30 min', 'servings': 'Serves 4', 'dietary': 'Vegan', 'img': 'veggie_frittata', 'id': 'SpinachPotatoFrittata'}
+};
+
 Storage.prototype.setObj = function(key, obj) {
     return this.setItem(key, JSON.stringify(obj))
 };
@@ -171,6 +178,7 @@ jQuery(document).ready(function($){
 
       addToFavorites();
 
+
     }
 
     // de-favorite a recipe
@@ -182,11 +190,11 @@ jQuery(document).ready(function($){
         }
       }
       localStorage.setObj("favoritedRecipes", favoritedRecipes);
-
       $("#favorite").removeClass("fas fa-heart fa-2x");
       $('#favorite').addClass("far fa-heart fa-2x");
     }
   });
+
 
   $(".export").on('click', function() {
     localStorage.setObj("recipesInCart", []);
@@ -213,14 +221,44 @@ function addRecipes() {
 
 // helper function to store favorited recipes
 function addToFavorites() {
+  $('.favorites_list_').eq(0).html("");
   var page = window.location.pathname.split("/").pop();
+  console.log(page);
   favoritedRecipes = localStorage.getObj("favoritedRecipes");
-
   for (var i=0; i < favoritedRecipes.length; i++) {
     recipeName = favoritedRecipes[i];
+    console.log(recipeName);
     if (recipeName == page) {
       $('#favorite').addClass("fas fa-heart fa-2x");
-
+      // console.log()
     }
+    console.log(page)
+    console.log(favorites[page]);
+    var favoritesAdded = '<li id = "' + favorites[recipeName]['id'] + '"><div class = "one_list_row"><img id = "favorites_pic" src="images/' + favorites[recipeName]['img'] + '.jpg"><div class = "one_list_recipe"><a href = "recipes/' + recipeName + '" class = "veggie_recipe">' + favorites[recipeName]['name'] + '</a></div><button class = "minutes_button" disabled>' + favorites[recipeName]['time'] + '</button><button class = "serves_button" disabled>' + favorites[recipeName]['servings'] + '</button><button class = "vegan_button" disabled>' + favorites[recipeName]['dietary'] + '</button></div></li>';
+    // <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span>
+    console.log(favoritesAdded)
+    $('.favorites_list_').eq(0).append(favoritesAdded);
+  }
+
+
+}
+
+// function addToFavoritesPage()
+
+function favoritesSearchFunc() {
+// Declare variables
+  var input = document.getElementById('myInput');
+  var filter = input.value.toUpperCase();
+  var ul = document.getElementById("favorites_list");
+  var li = ul.getElementsByTagName('li');
+
+// Loop through all list items, and hide those who don't match the search query
+  for(var i = 0; i < li.length; i++) {
+      // a = li[i].getElementsByTagName("a")[0];
+      if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+      } else {
+          li[i].style.display = "none";
+      }
   }
 }
