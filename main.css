@@ -515,7 +515,7 @@ main button {
   display: flex;
   flex-direction: row;
   /*justify-content: center;*/
-  height: 35vh;
+  height: 40vh;
   width: 80vw;
   align-items: center;
   border-bottom: 1px solid silver;
@@ -526,15 +526,26 @@ main button {
 }
 
 .one_list_recipe{
+  display: flex;
+  flex-direction: row;
   font-size: 180%;
   font-family: 'Didact Gothic';
+  align-items: center;
   /*margin-right: 10px;*/
   margin-top: 50px;
 }
 
 .veggie_recipe{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   color: black;
   margin-right: 5px;
+}
+
+.veggie_recipe:hover img{
+ 
+  transform: scale(1.05);
 }
 
 .veggie_recipe:hover{
@@ -542,14 +553,23 @@ main button {
   text-decoration: underline;
 }
 
+/*#recipe_img_name{
+  transform: scale(1.05);
+}*/
+
 #noodle_recipe{
   margin-right: 10px;
 }
 
 #favorites_pic{
-  clip-path: circle(15vh at center);
+  clip-path: circle(14vh at center);
   height: 30vh;
   width: 25vw;  
+}
+
+#favorites_pic:hover{
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .favorites_list_{
@@ -572,6 +592,7 @@ main button {
   margin-right: 5px;
   border-radius: 8px;
   cursor: initial;
+  margin-top: 50px;
 }
 
 .minutes_button{

@@ -234,9 +234,7 @@ function addToFavorites() {
     }
     console.log(page)
     console.log(favorites[page]);
-    var favoritesAdded = '<li id = "' + favorites[recipeName]['id'] + '"><div class = "one_list_row"><img id = "favorites_pic" src="images/' + favorites[recipeName]['img'] + '.jpg"><div class = "one_list_recipe"><a href = "recipes/' + recipeName + '" class = "veggie_recipe">' + favorites[recipeName]['name'] + '</a></div><button class = "minutes_button" disabled>' + favorites[recipeName]['time'] + '</button><button class = "serves_button" disabled>' + favorites[recipeName]['servings'] + '</button><button class = "vegan_button" disabled>' + favorites[recipeName]['dietary'] + '</button></div></li>';
-    // <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span>
-    console.log(favoritesAdded)
+    var favoritesAdded = '<li id = "' + favorites[recipeName]['id'] + '"><div class = "one_list_row"><div class = "one_list_recipe"><a href = "recipes/' + recipeName + '" class = "veggie_recipe"><img id = "favorites_pic" src="images/' + favorites[recipeName]['img'] + '.jpg">' + favorites[recipeName]['name'] + '</a></div><button class = "minutes_button" disabled>' + favorites[recipeName]['time'] + '</button><button class = "serves_button" disabled>' + favorites[recipeName]['servings'] + '</button><button class = "vegan_button" disabled>' + favorites[recipeName]['dietary'] + '</button></div></li>';    console.log(favoritesAdded)
     $('.favorites_list_').eq(0).append(favoritesAdded);
   }
 
