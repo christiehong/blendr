@@ -23,63 +23,85 @@ var favoritedRecipes = [];
 
 
 document.addEventListener("DOMContentLoaded", function() {
+
   var page = window.location.pathname.split("/").pop();
 	if (page == "searched.html") {
-  allergies = JSON.parse(sessionStorage.getItem("allergies"))
-  preferences = JSON.parse(sessionStorage.getItem("preferences"))
-  level = JSON.parse(sessionStorage.getItem("level"))
-  console.log(level)
-  // Fixing level
-  console.log(document.getElementsByName("Difficulty")[0].value)
-  if(level == "MEDIUM"){
-    console.log("Medium in")
-    document.getElementsByName("Difficulty")[0].value = "Medium"
-  }
-  else if(level == "EASY"){
-    console.log("Easy in")
-    document.getElementsByName("Difficulty")[0].value = "Easy"
-  }
-  else if(level == "HARD"){
-    console.log("Hard in")
-    document.getElementsByName("Difficulty")[0].value = "Hard"
-  }
-  else{
-    document.getElementsByName("Difficulty")[0].value = "All"
-  }
-  console.log(document.getElementsByName("Difficulty")[0].value)
+    allergies = JSON.parse(sessionStorage.getItem("allergies"))
+    preferences = JSON.parse(sessionStorage.getItem("preferences"))
+    level = JSON.parse(sessionStorage.getItem("level"))
+    console.log(level)
+    // Fixing level
+    console.log(document.getElementsByName("Difficulty")[0].value)
+    if(level == "MEDIUM"){
+      console.log("Medium in")
+      document.getElementsByName("Difficulty")[0].value = "Medium"
+    }
+    else if(level == "EASY"){
+      console.log("Easy in")
+      document.getElementsByName("Difficulty")[0].value = "Easy"
+    }
+    else if(level == "HARD"){
+      console.log("Hard in")
+      document.getElementsByName("Difficulty")[0].value = "Hard"
+    }
+    else{
+      document.getElementsByName("Difficulty")[0].value = "All"
+    }
+    console.log(document.getElementsByName("Difficulty")[0].value)
 
-  // Fixing restrictions list:
-  restriction_list = document.getElementsByClassName("restrictions")[0]
-  for(i=0; i < allergies.length; i++){
-    restriction_list.appendChild(createAllergyTag(allergies[i]))
+    // Fixing restrictions list:
+    restriction_list = document.getElementsByClassName("restrictions")[0]
+    for(i=0; i < allergies.length; i++){
+      restriction_list.appendChild(createAllergyTag(allergies[i]))
+    }
+    // Fixing preferences
+    preference_list = document.getElementsByClassName("preferences")[0]
+    for(i=0; i < preferences.length; i++){
+      preference_list.appendChild(createPrefTag(preferences[i]))
+    }
+    document.getElementById("search-bar").addEventListener("keyup", function(event){
+      event.preventDefault();
+      if(event.keyCode == 13) {
+        document.getElementById("search-icon").click();
+      }
+    });
+    document.getElementById("Preference_bar").addEventListener("keyup", function(event){
+      event.preventDefault();
+      if(event.keyCode == 13) {
+        addPreference();
+      }
+    });
+    document.getElementById("Allergy_bar").addEventListener("keyup", function(event){
+      event.preventDefault();
+      if(event.keyCode == 13) {
+        addAllergy();
+      }
+    });
+    document.getElementById("mySlider").addEventListener("change", function(event){fixTime()});
+    // If sessionStorage has any saved word
+    document.getElementById("search-bar").value = sessionStorage.getItem("word")
+    if (document.getElementById("search-bar").value != ""){
+      perform_search();
+    }
+
   }
-  // Fixing preferences
-  preference_list = document.getElementsByClassName("preferences")[0]
-  for(i=0; i < preferences.length; i++){
-    preference_list.appendChild(createPrefTag(preferences[i]))
+
+  // If landing page
+  else{
+    document.getElementById("search-bar").addEventListener("keyup", function(event){
+      event.preventDefault();
+      if(event.keyCode == 13) {
+        document.getElementById("search-icon").click();
+      }
+    });
   }
-  document.getElementById("search-bar").addEventListener("keyup", function(event){
-    event.preventDefault();
-    if(event.keyCode == 13) {
-      document.getElementById("search-icon").click();
-    }
-  });
-  document.getElementById("Preference_bar").addEventListener("keyup", function(event){
-    event.preventDefault();
-    if(event.keyCode == 13) {
-      addPreference();
-    }
-  });
-  document.getElementById("Allergy_bar").addEventListener("keyup", function(event){
-    event.preventDefault();
-    if(event.keyCode == 13) {
-      addAllergy();
-    }
-  });
-  document.getElementById("mySlider").addEventListener("change", function(event){fixTime()});
-}
+
 });
 
+// Saving searched word
+function save_search(){
+  sessionStorage.setItem("word", document.getElementById("search-bar").value)
+}
 var names = ["omelette", "quiche", "rancheros", "frittata"]
 var headers = {"omelette": 1,
                "quiche": 2,
@@ -376,8 +398,10 @@ function addAllergy(){
   } */
   restriction_list = document.getElementsByClassName("restrictions")[0]
   allergy = document.getElementById("Allergy_bar").value
-  restriction_list.appendChild(createAllergyTag(allergy))
-  document.getElementById("Allergy_bar").value = ""
+  if(allergy != ""){
+    restriction_list.appendChild(createAllergyTag(allergy))
+    document.getElementById("Allergy_bar").value = ""
+  }
 }
 
 
@@ -394,8 +418,10 @@ function addPreference(){
   */
   preference_list = document.getElementsByClassName("preferences")[0]
   preference = document.getElementById("Preference_bar").value
-  preference_list.appendChild(createPrefTag(preference))
-  preference = document.getElementById("Preference_bar").value = ""
+  if(preference != "") {
+    preference_list.appendChild(createPrefTag(preference))
+    document.getElementById("Preference_bar").value = ""
+  }
 }
 
 function clearAll(){
@@ -410,6 +436,8 @@ function clearAll(){
   document.getElementsByName("servings")[0].value= "-----"
   // Difficulty
   document.getElementsByName("Difficulty")[0].value = "All"
+
+  document.getElementById("search-bar").value = ""
 }
 
 function fixTime(){
