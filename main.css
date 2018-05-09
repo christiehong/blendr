@@ -815,6 +815,10 @@ main button {
   color: white;
 }
 
+#submit:hover {
+  color: var(--light-purple)
+}
+
 #submit-container {
   text-align: center;
 }
