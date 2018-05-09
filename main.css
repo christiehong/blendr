@@ -447,10 +447,17 @@ main button {
   height: 40px;
   border-radius: 5px;
   font-size: 150%;
+  background-color: var(--dark-purple);
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  border-style: none;
+  color: white;
+  font-size: 30px;
 }
 
 #one_list_back_href{
-  color: black;
+  color: white;
 }
 
 #one_list_back:hover{
