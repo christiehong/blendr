@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log(a)
 });
 
-var names = ["omlette", "quiche", "rancheros", "frittata"]
-var headers = {"omlette": 1,
+var names = ["omelette", "quiche", "rancheros", "frittata"]
+var headers = {"omelette": 1,
                "quiche": 2,
               "rancheros":3 ,
               "frittata": 4}
@@ -78,7 +78,7 @@ function find_results(){
 
   // Second rule of our search: If a partial word is matched
   if(search_words.indexOf("veggie") > -1) {
-    results.push("omlette");
+    results.push("omelette");
     results.push("quiche");
   }
   if(search_words.indexOf("huevos") > -1){
@@ -107,13 +107,13 @@ function find_results(){
       prep_res = []
     }
     else if(time_bar < 50) {
-      prep_res = ["omlette",  "rancheros"]
+      prep_res = ["omelette",  "rancheros"]
     }
     else if(time_bar < 75) {
-      prep_res = ["omlette", "rancheros", "frittata"]
+      prep_res = ["omelette", "rancheros", "frittata"]
     }
     else {
-      prep_res = ["omlette", "quiche", "rancheros", "frittata"]
+      prep_res = ["omelette", "quiche", "rancheros", "frittata"]
     }
   }
 
@@ -153,7 +153,7 @@ function show_results(results){
   document.getElementsByClassName("results-show")[0].innerHTML = ""
   innerHTML = ""
   // Now, add as we get from the results
-  if(results.indexOf("omlette") != -1){
+  if(results.indexOf("omelette") != -1){
     innerHTML = innerHTML +
     "<div class='recipe-overview'> \
       <a href='recipes/veggie_omelette.html' class='click'> \
