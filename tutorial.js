@@ -1,6 +1,6 @@
 var slideIndex = 1
 var customerName
-var level
+var level = "MEDIUM"
 var allergies = new Set()
 var preferences = new Set()
 
@@ -22,10 +22,17 @@ document.addEventListener("DOMContentLoaded", function(){
 	    }
 	});
 });
+
+Storage.prototype.setObj = function(key, obj) {
+    return this.setItem(key, JSON.stringify(obj))
+};
+Storage.prototype.getObj = function(key) {
+    return JSON.parse(this.getItem(key))
+};
+
 // Change end [Enter Button Fixed]
 function slide(n) {
 	showSlide(slideIndex += n)
-
 }
 
 function submitInfo() {
@@ -88,4 +95,10 @@ function levelSelect(ele) {
 			$(".level")[i].style.color = "white";
 		}
 	}
+}
+
+function storeInfo() {
+	sessionStorage.setObj("allergies", Array.from(allergies))
+	sessionStorage.setObj("preferences", Array.from(preferences))
+	sessionStorage.setObj("level", level)
 }
