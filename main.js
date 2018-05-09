@@ -23,6 +23,8 @@ var favoritedRecipes = [];
 
 
 document.addEventListener("DOMContentLoaded", function() {
+  var page = window.location.pathname.split("/").pop();
+	if (page == "searched.html") {
 
   document.getElementById("search-bar").addEventListener("keyup", function(event){
     event.preventDefault();
@@ -30,8 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("search-icon").click();
     }
   });
-  a = ""
-  console.log(a)
+}
 });
 
 var names = ["omelette", "quiche", "rancheros", "frittata"]
@@ -308,7 +309,7 @@ jQuery(document).ready(function($){
   }
 
 	var page = window.location.pathname.split("/").pop();
-	if (page == "landing.html" || page == "searched.html") {
+	if (page == "landing.html" || page == "searched.html" || page == "one_list.html") {
 		$("#cart").hide();
 	}
 
