@@ -73,7 +73,7 @@
 			<!-- Filter-preptime -->
 			<div class="filter-preptime">
 				<h2>Prep Time</h2>
-				<input type="range" list="tickmarks" min="1" max="100" value="100" class="preptime-slider" id="mySlider">
+				<input type="range" list="tickmarks" min="1" max="100" value="100" class="preptime-slider" oninput="fixTime()" id="mySlider">
 
 					<datalist id="tickmarks">
 						<option value="0">
