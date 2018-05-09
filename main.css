@@ -89,6 +89,20 @@ header h1 {
   padding-right: 10px;
 }
 
+#nav_bar_heart{
+  color: white;
+  background-size: 3px;
+  margin-right: -5px;
+}
+
+#favorites_nav_box:hover i{
+  color: var(--light-purple);
+}
+
+#favorites_nav_box:hover{
+  color: var(--light-purple);
+}
+
 #slide-cart-trigger {
   right: 0;
 }
@@ -324,7 +338,7 @@ main button {
   padding-right: 10px;
 }
 
-i#favorite {
+#favorite {
   color: red;
 }
 
@@ -409,87 +423,22 @@ i#favorite {
   color: var(--dark-purple);
 }
 
-/* ----- MAIN for PAST LISTS ----- */
+
+/* ----- MAIN for ONE LIST ----- */
 
 #past_lists_column{
   display: flex;
-  height: calc(100vh - 50px);
+  height: 100vh;
   width: 100vw;
-  margin-top: 50px;
+  /*margin-top: 50px;*/
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
 
-#past_lists_title{
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-  font-family: 'Pacifico';
-  margin: 0;
-  color: var(--dark-purple);
-  font-size: 250%;
-  height: calc((100vh - 50px)/3);
-  align-items: center;
+#past_lists_column:hover{
+  cursor: initial;
 }
-
-txt{
-  font-size: 125%;
-  font-family: 'Didact Gothic';
-  margin-left: 8px;
-}
-
-#icon{
-  margin-top: 5px;
-  color: black;
-}
-
-#icon:hover{
-  color: black;
-}
-
-.f1 {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  height: calc((100vh - 50px)/16);
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.past_lists{
-  color: black;
-}
-
-.past_lists:hover{
-  text-decoration: underline;
-  color: black;
-}
-
-#past_lists_back{
-  position: absolute;
-  top: 75px;
-  left: 15px;
-  width: 60px;
-  height: 40px;
-  border-radius: 5px;
-  font-size: 150%;
-  color: black;
-}
-
-#past_list_back_href{
-  color: black;
-}
-
-#past_list_back_href:hover{
-  color: var(--light-purple);
-}
-
-
-/* ----- MAIN for ONE LIST ----- */
 
 #one_list_back{
   position: absolute;
@@ -505,42 +454,112 @@ txt{
   color: black;
 }
 
-#one_list_back_href:hover{
+#one_list_back:hover{
   color: var(--light-purple);
 }
 
+#one_list_container{
+  height: 700px;
+}
+
+#one_list_container:hover{
+  cursor: initial;
+}
 
 #one_list_title{
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 0px;
+  /*margin-left: 50px;*/
   font-family: 'Pacifico';
-  margin: 0;
   color: var(--dark-purple);
   font-size: 250%;
-  height: calc((100vh - 50px)/4);
+  /*height: 80px;*/
+  /*align-items: flex-start;*/
+}
+
+#one_list_title:hover{
+  cursor: default;
+}
+
+#ul_container{
+  display: flex;
+  justify-content: center;
+}
+
+#favorites_list{
+  justify-content: center;
+}
+
+#favorites_list:hover{
+  cursor: initial;
+}
+
+#default_text_li{
+  justify-content: center;
   align-items: center;
 }
+
+#default_text{
+  margin-top: 10vh;
+  margin-right: 4vw;
+  color: black;
+  self-align: center;
+}
+
+#default_text:hover{
+  color: black;
+  cursor: initial;
+}
+
+#myInput {
+    /*background-image: url('/css/searchicon.png'); /* Add a search icon to input */*/
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 250px; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-top: 20px;
+    margin-bottom: 30px; /* Add some space below the input */
+}
+
 
 .one_list_row{
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  height: 35vh;
+  /*justify-content: center;*/
+  height: 40vh;
   width: 80vw;
   align-items: center;
   border-bottom: 1px solid silver;
 }
 
+.one_list_row:hover{
+  cursor: initial;
+}
+
 .one_list_recipe{
+  display: flex;
+  flex-direction: row;
   font-size: 180%;
   font-family: 'Didact Gothic';
-  margin-right: 10px;
+  align-items: center;
+  /*margin-right: 10px;*/
+  margin-top: 50px;
 }
 
 .veggie_recipe{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   color: black;
   margin-right: 5px;
+}
+
+.veggie_recipe:hover img{
+ 
+  transform: scale(1.05);
 }
 
 .veggie_recipe:hover{
@@ -548,32 +567,46 @@ txt{
   text-decoration: underline;
 }
 
+/*#recipe_img_name{
+  transform: scale(1.05);
+}*/
+
 #noodle_recipe{
   margin-right: 10px;
 }
 
-#omelette_pic{
-  clip-path: circle(15vh at center);
+#favorites_pic{
+  clip-path: circle(14vh at center);
   height: 30vh;
-  width: 25vw;
+  width: 25vw;  
 }
 
-#noodle_stir_fry_pic{
-  clip-path: circle(15vh at center);
-  height: 30vh;
-  width: 25vw;
-  margin-right: 20px;
+#favorites_pic:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.favorites_list_{
+  list-style:none;
+  max-height:400px;
+  overflow:auto;
+}
+
+#one_list_container{
+  height: 400px;
+  width: 90vw;
 }
 
 .minutes_button, .serves_button, .vegan_button{
   background-color: var(--dark-purple);
   color: white;
-  outline: 0px solid black;
+  border: 0px solid black;
   font-size: 15px;
   margin-left: 5px;
   margin-right: 5px;
   border-radius: 8px;
   cursor: initial;
+  margin-top: 50px;
 }
 
 .minutes_button{
@@ -596,7 +629,7 @@ txt{
 }
 
 .vegan_button{
-  width: 50px;
+  width: 90px;
   height: 60px;
   margin-right: 15px;
 }

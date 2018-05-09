@@ -3,6 +3,13 @@ var huevos_rancheros = {'Huevos Rancheros':['2 plum tomatoes', '1 onion', '1 jal
 var veggie_quiche = {'Loaded Veggie Quiche':['1 unbaked pie crust', '1 box of mushrooms', '1 tomato', '1 bunch of basil', 'salt', 'pepper', 'olive oil', 'milk', '4 eggs', 'Colby-Monterey Jack cheese']}
 var veggie_frittata = {'Spinach Potato Frittata':['6 small red potatoes', 'olive oil', '1 bag of spinach', '1 head of garlic', '1 onion', '6 eggs', 'salt', 'pepper', 'milk', 'Cheddar cheese']}
 
+
+var favorites = {'veggie_omelette.html': {'name': 'Veggie Omelette', 'time': '15 min', 'servings': 'Serves 1', 'dietary': 'Vegan', 'img': 'vegan_omelette', 'id': 'VeggieOmelette'},
+  'huevos_rancheros.html': {'name': 'Huevos Rancheros', 'time': '15 min', 'servings': 'Serves 2', 'dietary': 'Vegetarian', 'img': 'huevos_rancheros', 'id': 'HuevosRancheros'},
+  'veggie_quiche.html': {'name': 'Loaded Veggie Quiche', 'time': '45 min', 'servings': 'Serves 4', 'dietary': 'Vegetarian', 'img': 'veggie_quiche', 'id': 'LoadedVeggieQuiche'},
+  'veggie_frittata.html': {'name': 'Spinach Potato Frittata', 'time': '30 min', 'servings': 'Serves 4', 'dietary': 'Vegan', 'img': 'veggie_frittata', 'id': 'SpinachPotatoFrittata'}
+};
+
 Storage.prototype.setObj = function(key, obj) {
     return this.setItem(key, JSON.stringify(obj))
 };
@@ -287,14 +294,14 @@ jQuery(document).ready(function($){
   console.log(localStorage.getObj("favoritedRecipes"));
 
 	// if cart is empty, insert "Your shopping list is currently empty."
-	if (localStorage.getObj("recipesInCart").length == 0) {
+	if (localStorage.getObj("recipesInCart") == null || localStorage.getObj("recipesInCart").length == 0) {
 		$('#cart').eq(0).append("<p> Your shopping list is currently empty.");
 		localStorage.setObj("recipesInCart", recipesInCart);
 	} else { // if cart isn't full, then put in the recipes that are stored
 		addRecipes();
 	}
 
-  if (localStorage.getObj("favoritedRecipes").length == 0) {
+  if (localStorage.getObj("favoritedRecipes") == null || localStorage.getObj("favoritedRecipes").length == 0) {
     localStorage.setObj("favoritedRecipes", favoritedRecipes);
   } else {
     addToFavorites();
@@ -368,6 +375,14 @@ jQuery(document).ready(function($){
 		$(event.target).parents('li').addClass('toDelete');
 		var recipeName = $(event.target).parents('li').children()[0];
 		var strippedRecipeName = $("<h3>").html(recipeName).text();
+
+    for (var i=0; i < recipesInCart.length; i++) {
+      recipe = Object.keys(recipesInCart[i])[0];
+      if (recipe == strippedRecipeName) {
+        recipesInCart.pop
+      }
+    }
+
 		recipesInCart.pop(strippedRecipeName);
 		localStorage.setObj("recipesInCart", recipesInCart);
 		$('.cart-items').eq(0).find('.toDelete').remove();
@@ -381,7 +396,9 @@ jQuery(document).ready(function($){
 	// open final check modal
 	$("#finish").on('click', function() {
 		$('.modal').show();
+    $('.shopping-list').eq(0).html("");
 		recipesInCart = localStorage.getObj("recipesInCart");
+
 		for (var i=0; i < recipesInCart.length; i++) {
 			recipeName = Object.keys(recipesInCart[i])[0];
 			var recipeAdded = '<li class="recipe-name"><h3>' + recipeName + '</h3><ul class="ingredient">';
@@ -411,8 +428,6 @@ jQuery(document).ready(function($){
       }
     }
 
-    console.log($('#favorite').hasClass("far fa-heart fa-2x"), $('#favorite').hasClass('fas fa-heart fa-2x'), alreadyFavorited);
-
     // favorite a recipe
     if (($('#favorite').hasClass("far fa-heart fa-2x") && alreadyFavorited == false) || ($('#favorite').hasClass("fas fa-heart fa-2x") && alreadyFavorited == false)) {
       $("#favorite").removeClass("far fa-heart fa-2x");
@@ -432,6 +447,7 @@ jQuery(document).ready(function($){
 
       addToFavorites();
 
+
     }
 
     // de-favorite a recipe
@@ -443,11 +459,11 @@ jQuery(document).ready(function($){
         }
       }
       localStorage.setObj("favoritedRecipes", favoritedRecipes);
-
       $("#favorite").removeClass("fas fa-heart fa-2x");
       $('#favorite').addClass("far fa-heart fa-2x");
     }
   });
+
 
   $(".export").on('click', function() {
     localStorage.setObj("recipesInCart", []);
@@ -474,14 +490,42 @@ function addRecipes() {
 
 // helper function to store favorited recipes
 function addToFavorites() {
+  $('.favorites_list_').eq(0).html("");
   var page = window.location.pathname.split("/").pop();
+  console.log(page);
   favoritedRecipes = localStorage.getObj("favoritedRecipes");
-
   for (var i=0; i < favoritedRecipes.length; i++) {
     recipeName = favoritedRecipes[i];
+    console.log(recipeName);
     if (recipeName == page) {
       $('#favorite').addClass("fas fa-heart fa-2x");
-
+      // console.log()
     }
+    console.log(page)
+    console.log(favorites[page]);
+    var favoritesAdded = '<li id = "' + favorites[recipeName]['id'] + '"><div class = "one_list_row"><div class = "one_list_recipe"><a href = "recipes/' + recipeName + '" class = "veggie_recipe"><img id = "favorites_pic" src="images/' + favorites[recipeName]['img'] + '.jpg">' + favorites[recipeName]['name'] + '</a></div><button class = "minutes_button" disabled>' + favorites[recipeName]['time'] + '</button><button class = "serves_button" disabled>' + favorites[recipeName]['servings'] + '</button><button class = "vegan_button" disabled>' + favorites[recipeName]['dietary'] + '</button></div></li>';    console.log(favoritesAdded)
+    $('.favorites_list_').eq(0).append(favoritesAdded);
+  }
+
+
+}
+
+// function addToFavoritesPage()
+
+function favoritesSearchFunc() {
+// Declare variables
+  var input = document.getElementById('myInput');
+  var filter = input.value.toUpperCase();
+  var ul = document.getElementById("favorites_list");
+  var li = ul.getElementsByTagName('li');
+
+// Loop through all list items, and hide those who don't match the search query
+  for(var i = 0; i < li.length; i++) {
+      // a = li[i].getElementsByTagName("a")[0];
+      if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+      } else {
+          li[i].style.display = "none";
+      }
   }
 }
