@@ -333,6 +333,12 @@ function show_results(results){
     }
   }
   document.getElementsByClassName("results-show")[0].innerHTML = innerHTML;
+  if(results.length == 0){
+    document.getElementById("header-text").innerHTML="Sorry, we couldn't find a match. Maybe try a different one..."
+  }
+  else{
+    document.getElementById("header-text").innerHTML="Best recipes for your search..."
+  }
 }
 
 function perform_search(){
