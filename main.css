@@ -430,7 +430,6 @@ main button {
   display: flex;
   height: 100vh;
   width: 100vw;
-  /*margin-top: 50px;*/
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -470,12 +469,10 @@ main button {
   display: flex;
   justify-content: center;
   margin-top: 0px;
-  /*margin-left: 50px;*/
   font-family: 'Pacifico';
   color: var(--dark-purple);
   font-size: 250%;
-  /*height: 80px;*/
-  /*align-items: flex-start;*/
+  margin-top: 30px;
 }
 
 #one_list_title:hover{
@@ -513,22 +510,18 @@ main button {
 }
 
 #myInput {
-    /*background-image: url('/css/searchicon.png'); /* Add a search icon to input */*/
-    background-position: 10px 12px; /* Position the search icon */
-    background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 250px; /* Full-width */
-    font-size: 16px; /* Increase font-size */
-    padding: 12px 20px 12px 40px; /* Add some padding */
-    border: 1px solid #ddd; /* Add a grey border */
+    width: 250px;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
     margin-top: 20px;
-    margin-bottom: 30px; /* Add some space below the input */
+    margin-bottom: 30px; 
 }
 
 
 .one_list_row{
   display: flex;
   flex-direction: row;
-  /*justify-content: center;*/
   height: 40vh;
   width: 80vw;
   align-items: center;
@@ -545,7 +538,6 @@ main button {
   font-size: 180%;
   font-family: 'Didact Gothic';
   align-items: center;
-  /*margin-right: 10px;*/
   margin-top: 50px;
 }
 
@@ -558,7 +550,6 @@ main button {
 }
 
 .veggie_recipe:hover img{
- 
   transform: scale(1.05);
 }
 
@@ -567,18 +558,11 @@ main button {
   text-decoration: underline;
 }
 
-/*#recipe_img_name{
-  transform: scale(1.05);
-}*/
-
-#noodle_recipe{
-  margin-right: 10px;
-}
-
 #favorites_pic{
   clip-path: circle(14vh at center);
   height: 30vh;
   width: 25vw;  
+  margin-bottom: 20px;
 }
 
 #favorites_pic:hover{
