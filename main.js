@@ -51,16 +51,12 @@ document.addEventListener("DOMContentLoaded", function() {
   // Fixing restrictions list:
   restriction_list = document.getElementsByClassName("restrictions")[0]
   for(i=0; i < allergies.length; i++){
-    new_item = document.createElement("li")
-    new_item.appendChild(document.createTextNode(allergies[i]))
-    restriction_list.appendChild(new_item)
+    restriction_list.appendChild(createAllergyTag(allergies[i]))
   }
   // Fixing preferences
   preference_list = document.getElementsByClassName("preferences")[0]
   for(i=0; i < preferences.length; i++){
-    new_item = document.createElement("li")
-    new_item.appendChild(document.createTextNode(preferences[i]))
-    preference_list.appendChild(new_item)
+    preference_list.appendChild(createPrefTag(preferences[i]))
   }
   document.getElementById("search-bar").addEventListener("keyup", function(event){
     event.preventDefault();
@@ -346,7 +342,30 @@ function perform_search(){
     show_results(find_results());
 }
 
+function createPrefTag(text){
+    innerHTML = "<div class = 'tag-container'><div class = 'tag'>"+text+"</div><div class ='tag' id='remove' onclick='removePref(this)'><i class='fas fa-times-circle'></i></div></div>"
+    a = document.createElement("li")
+    a.innerHTML = innerHTML
+    return a;
+}
+
+function removePref(elm){
+  elm.parentNode.parentNode.remove()
+}
+
+function createAllergyTag(text){
+    innerHTML = "<div class = 'tag-container'><div class = 'tag'>"+text+"</div><div class ='tag' id='remove' onclick='removeAllergy(this)'><i class='fas fa-times-circle'></i></div></div>"
+    a = document.createElement("li")
+    a.innerHTML = innerHTML
+    return a;
+}
+function removeAllergy(elm){
+  console.log(elm.parentNode)
+  elm.parentNode.parentNode.remove()
+}
+
 function addAllergy(){
+  /*
   restriction_list = document.getElementsByClassName("restrictions")[0]
   allergy = document.getElementById("Allergy_bar").value
   if(allergy != ""){
@@ -354,10 +373,16 @@ function addAllergy(){
     new_item.appendChild(document.createTextNode(allergy))
     restriction_list.appendChild(new_item)
     document.getElementById("Allergy_bar").value = ""
-  }
+  } */
+  restriction_list = document.getElementsByClassName("restrictions")[0]
+  allergy = document.getElementById("Allergy_bar").value
+  restriction_list.appendChild(createAllergyTag(allergy))
+  document.getElementById("Allergy_bar").value = ""
 }
 
+
 function addPreference(){
+  /*
   preference_list = document.getElementsByClassName("preferences")[0]
   preference = document.getElementById("Preference_bar").value
   if(preference != ""){
@@ -366,6 +391,11 @@ function addPreference(){
     preference_list.appendChild(new_item)
     preference = document.getElementById("Preference_bar").value = ""
   }
+  */
+  preference_list = document.getElementsByClassName("preferences")[0]
+  preference = document.getElementById("Preference_bar").value
+  preference_list.appendChild(createPrefTag(preference))
+  preference = document.getElementById("Preference_bar").value = ""
 }
 
 function clearAll(){

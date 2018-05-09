@@ -143,6 +143,24 @@ table.content-holder {
   font-size: 150%;
   font-weight: bold;
 }
+.tag {
+  background-color: #b3b3b3;
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 5px;
+  margin-left: 5px;
+  color: white;
+}
+
+.tag-container {
+  display: inline-block;
+}
+
+#remove {
+  margin-left: 0px;
+}
+
 #time-label{
   display: inline-block;
   margin-left: 30%;
