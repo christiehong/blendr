@@ -25,7 +25,43 @@ var favoritedRecipes = [];
 document.addEventListener("DOMContentLoaded", function() {
   var page = window.location.pathname.split("/").pop();
 	if (page == "searched.html") {
+  allergies = JSON.parse(sessionStorage.getItem("allergies"))
+  preferences = JSON.parse(sessionStorage.getItem("preferences"))
+  level = JSON.parse(sessionStorage.getItem("level"))
+  console.log(level)
+  // Fixing level
+  console.log(document.getElementsByName("Difficulty")[0].value)
+  if(level == "MEDIUM"){
+    console.log("Medium in")
+    document.getElementsByName("Difficulty")[0].value = "Medium"
+  }
+  else if(level == "EASY"){
+    console.log("Easy in")
+    document.getElementsByName("Difficulty")[0].value = "Easy"
+  }
+  else if(level == "HARD"){
+    console.log("Hard in")
+    document.getElementsByName("Difficulty")[0].value = "Hard"
+  }
+  else{
+    document.getElementsByName("Difficulty")[0].value = "All"
+  }
+  console.log(document.getElementsByName("Difficulty")[0].value)
 
+  // Fixing restrictions list:
+  restriction_list = document.getElementsByClassName("restrictions")[0]
+  for(i=0; i < allergies.length; i++){
+    new_item = document.createElement("li")
+    new_item.appendChild(document.createTextNode(allergies[i]))
+    restriction_list.appendChild(new_item)
+  }
+  // Fixing preferences
+  preference_list = document.getElementsByClassName("preferences")[0]
+  for(i=0; i < preferences.length; i++){
+    new_item = document.createElement("li")
+    new_item.appendChild(document.createTextNode(preferences[i]))
+    preference_list.appendChild(new_item)
+  }
   document.getElementById("search-bar").addEventListener("keyup", function(event){
     event.preventDefault();
     if(event.keyCode == 13) {
