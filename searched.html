@@ -27,7 +27,11 @@
       </a>
 
 			<div class="searching">
-				<input type="text" placeholder="try sandwiches ... "><a href="searched.html"><i id="search-icon" class="fas fa-search"></i></a>
+				<!-- Added ID for search bar - Das -->
+				<input type="text" id="search-bar" placeholder="try sandwiches ... ">
+				<!-- <a href="searched.html"> -->
+					<i id="search-icon" class="fas fa-search" onclick="perform_search()"></i>
+				<!--</a> -->
 			</div>
 
 			<!-- Navigation -->
@@ -41,135 +45,165 @@
 
 <body>
 	<!-- Filters -->
-	<div class="filters">
-		<!-- Filter-Header -->
-		<div class="filter-header">
-			<h2>Filters</h2>
-			<button id="filters-clear">Clear all</button>
-		</div>
-		<!-- Filter-Restrictions -->
-		<div class="filter-restrictions">
-			<h2>Dietary restrictions</h2>
-			<!-- <select name="restrictions" multiple="" class="restrictions-dropdown">
-			  <option value="Vergiterian">Vegeterian</option>
-				<option value="Vegan">Vegan</option>
-				<option value="Peanuts">Peanuts</option>
-				<option value="Treenuts">Treenuts</option>
-			</select> -->
-			<ul class="restrictions">
-				<li>Vegetarian</li>
-			</ul>
-			<input type="text" placeholder="add more allergies..."><button>+</button>
-		</div>
-		<!-- Filter-preptime -->
-		<div class="filter-preptime">
-			<h2>Prep Time</h2>
-			<input type="range" min="1" max="100" value="50" class="preptime-slider" id="mySlider"></input>
-		</div>
-		<!-- Filter-Servings -->
-		<div class="filter-servings">
-			<h2>Number of servings</h2>
-			<select name="servings" class="servings-dropdown">
-				<option>1</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-				<option>5+</option>
-			</select>
-		</div>
-		<!-- filter-Difficulty -->
-		<div class="filter-difficulty">
-			<h2>Difficulty:</h2>
-			<select name="Difficulty" class="Difficulty-dropdown">
-				<option>Easy</option>
-				<option>Medium</option>
-				<option>Hard</option>
-			</select>
-		</div>
-		<!-- Filter-Cookware -->
-		<div class="filter-cookware">
-			<h2>Available Cookware:</h2>
-			<div class="cookware-dropdown">
-				<input type="checkbox">pots</input><br>
-				<input type="checkbox">pans</input><br>
-				<input type="checkbox">oven</input><br>
+	<table class="content-holder">
+		<div class="filters">
+
+			<!-- Filter-Header -->
+			<div class="filter-header">
+				<h2>Filters</h2>
+				<button id="filters-clear">Clear all</button>
 			</div>
-		</div>
-	</div>
-
-	<!-- Results -->
-	<div class="results">
-		<!-- Results-Tags -->
-		<div class="results-tags">
-			<h2> Best recipes for your search... </h2>
-
-		</div>
-		<!-- Results-Show -->
-		<div class="results-show">
-
-			<div class="recipe-overview">
-				<a href="recipes/veggie_omelette.html" class="click">
-					<h1 class="clickable_header">Veggie Omelette</h1>
-					<div id="image">
-						<img src="images/vegan_omelette.jpg">
-					</div>
-				</a>
-				<div id="content">
-					<h2>Difficulty:</h2> Easy <br>
-					<h2>Prep Time:</h2> 15 mins <br>
-					<h2>Calories:</h2> 400 calories <br>
-					<h2>Servings:</h2> 1 serving <br>
-				</div>
-
+			<!-- Filter-Restrictions -->
+			<div class="filter-restrictions">
+				<h2>Dietary restrictions</h2>
+				<!-- <select name="restrictions" multiple="" class="restrictions-dropdown">
+					<option value="Vergiterian">Vegeterian</option>
+					<option value="Vegan">Vegan</option>
+					<option value="Peanuts">Peanuts</option>
+					<option value="Treenuts">Treenuts</option>
+				</select> -->
+				<ul class="restrictions">
+					<li>Vegetarian</li>
+				</ul>
+				<input type="text" placeholder="add more allergies..."><button>+</button>
 			</div>
+			<!-- Filter-preptime -->
+			<div class="filter-preptime">
+				<h2>Prep Time</h2>
+				<input type="range" list="tickmarks" min="1" max="100" value="50" class="preptime-slider" id="mySlider">
 
-			<div class="recipe-overview" style="background-color:var(--light-gray)">
-				<a href="recipes/veggie_quiche.html" class="click">
-					<h1>Loaded Veggie Quiche</h1>
-					<div id="image">
-						<img src="images/veggie_quiche.jpg">
-					</div>
-				</a>
-				<div id="content">
-					<h2>Difficulty:</h2> Medium <br>
-					<h2>Prep Time:</h2> 45 mins <br>
-					<h2>Calories:</h2> 300 calories <br>
-					<h2>Servings:</h2> 4 servings <br>
+					<datalist id="tickmarks">
+						<option value="0">
+					  <option value="10">
+					  <option value="20">
+					  <option value="30">
+					  <option value="40">
+					  <option value="50">
+					  <option value="60">
+					  <option value="70">
+					  <option value="80">
+					  <option value="90">
+					  <option value="100">
+					</datalist>
+				<label style="display:inline-block;">30 minutes</label>
+			</div>
+			<!-- Filter-Servings -->
+			<div class="filter-servings">
+				<h2>Number of servings</h2>
+				<select name="servings" class="servings-dropdown">
+					<option>--</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4+</option>
+				</select>
+			</div>
+			<!-- filter-Difficulty -->
+			<div class="filter-difficulty">
+				<h2>Difficulty:</h2>
+				<select name="Difficulty" class="Difficulty-dropdown">
+					<option>All</option>
+					<option>Easy</option>
+					<option>Medium</option>
+					<option>Hard</option>
+				</select>
+			</div>
+			<!--
+
+			<div class="filter-cookware">
+				<h2>Available Cookware:</h2>
+				<div class="cookware-dropdown">
+					<input type="checkbox" id="checkbox-pot">pots</input><br>
+					<input type="checkbox" id="checkbox-pan">pans</input><br>
+					<input type="checkbox" id="checkbox-oven">oven</input><br>
 				</div>
 			</div>
-
-			<div class="recipe-overview">
-				<a href="recipes/huevos_rancheros.html" class="click">
-					<h1>Huevos Rancheros</h1>
-					<div id="image">
-						<img src="images/huevos_rancheros.jpg">
-					</div>
-				</a>
-				<div id="content">
-					<h2>Difficulty:</h2> Easy <br>
-					<h2>Prep Time:</h2> 15 mins <br>
-					<h2>Calories:</h2> 450 calories <br>
-					<h2>Servings:</h2> 2 servings <br>
-				</div>
-			</div>
-
-			<div class="recipe-overview" style="background-color:var(--light-gray)">
-				<a href="recipes/veggie_frittata.html" class="click">
-					<h1>Spinach Potato Frittata</h1>
-					<div id="image">
-						<img src="images/veggie_frittata.jpg">
-					</div>
-				</a>
-				<div id="content">
-					<h2>Difficulty:</h2> Medium <br>
-					<h2>Prep Time:</h2> 30 mins <br>
-					<h2>Calories:</h2> 250 calories <br>
-					<h2>Servings:</h2> 4 servings <br>
-				</div>
-			</div>
-
+			-->
 		</div>
-	</div>
+		<tr>
+			<td width="20%">
+			</td>
+
+			<td width="80%">
+				<!-- Results -->
+				<div class="results">
+					<!-- Results-Tags -->
+					<div class="results-tags">
+						<h2> Best recipes for your search... </h2>
+
+					</div>
+					<!-- Results-Show -->
+					<div class="results-show">
+
+						<div class="recipe-overview">
+							<a href="recipes/veggie_omelette.html" class="click">
+								<h1 class="clickable_header">Veggie Omelette</h1>
+								<div id="image">
+									<img src="images/vegan_omelette.jpg">
+								</div>
+							</a>
+							<div id="content">
+								<h2>Difficulty:</h2> Easy <br>
+								<h2>Prep Time:</h2> 15 mins <br>
+								<h2>Calories:</h2> 400 calories <br>
+								<h2>Servings:</h2> 1 serving <br>
+							</div>
+
+						</div>
+
+						<div class="recipe-overview" style="background-color:var(--light-gray)">
+							<a href="recipes/veggie_quiche.html" class="click">
+								<h1>Loaded Veggie Quiche</h1>
+								<div id="image">
+									<img src="images/veggie_quiche.jpg">
+								</div>
+							</a>
+							<div id="content">
+								<h2>Difficulty:</h2> Medium <br>
+								<h2>Prep Time:</h2> 45 mins <br>
+								<h2>Calories:</h2> 300 calories <br>
+								<h2>Servings:</h2> 4 servings <br>
+							</div>
+						</div>
+
+						<div class="recipe-overview">
+							<a href="recipes/huevos_rancheros.html" class="click">
+								<h1>Huevos Rancheros</h1>
+								<div id="image">
+									<img src="images/huevos_rancheros.jpg">
+								</div>
+							</a>
+							<div id="content">
+								<h2>Difficulty:</h2> Easy <br>
+								<h2>Prep Time:</h2> 15 mins <br>
+								<h2>Calories:</h2> 450 calories <br>
+								<h2>Servings:</h2> 2 servings <br>
+							</div>
+						</div>
+
+						<div class="recipe-overview" style="background-color:var(--light-gray)">
+							<a href="recipes/veggie_frittata.html" class="click">
+								<h1>Spinach Potato Frittata</h1>
+								<div id="image">
+									<img src="images/veggie_frittata.jpg">
+								</div>
+							</a>
+							<div id="content">
+								<h2>Difficulty:</h2> Medium <br>
+								<h2>Prep Time:</h2> 30 mins <br>
+								<h2>Calories:</h2> 250 calories <br>
+								<h2>Servings:</h2> 4 servings <br>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</td>
+		</tr>
+
+
+
 
 	<div id="shadow-layer"></div>
 

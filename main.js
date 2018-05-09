@@ -20,6 +20,275 @@ Storage.prototype.getObj = function(key) {
 var recipesInCart = [];
 var favoritedRecipes = [];
 
+
+
+document.addEventListener("DOMContentLoaded", function() {
+
+  document.getElementById("search-bar").addEventListener("keyup", function(event){
+    event.preventDefault();
+    if(event.keyCode == 13) {
+      document.getElementById("search-icon").click();
+    }
+  });
+  a = ""
+  console.log(a)
+});
+
+var names = ["omlette", "quiche", "rancheros", "frittata"]
+var headers = {"omlette": 1,
+               "quiche": 2,
+              "rancheros":3 ,
+              "frittata": 4}
+
+var difficulty_map = {"Easy": [names[0], names[2]],
+                    "Medium": [names[1]],
+                      "Hard": [names[3]]}
+var time_map = {"15": [names[0], names[2]],
+                "30": [names[3]],
+                "45": [names[1]]}
+var servings_map = {"1": [names[0]],
+                    "2": [names[2]],
+                    "3": [names[1], names[3]],
+                    "4+": [names[1], names[3]]}
+
+/// Find which results will be showed
+/// Return a list with keys in order
+function find_results(){
+  var search_words = document.getElementById("search-bar").value.toLowerCase().split(" ")
+  var servings = document.getElementsByName("servings")[0].value
+  var difficulty = document.getElementsByName("Difficulty")[0].value
+  var time_bar = parseInt(document.getElementById("mySlider").value)
+
+  //var isPot = document.getElementById("checkbox-pot").checked
+  //var isPan = document.getElementById("checkbox-pan").checked
+  //var isOven = document.getElementById("checkbox-oven").checked
+
+  results = []
+  // First rule of our search: If a word is matched, show:
+  for(i=0; i < 4; i++){
+      word = names[i]
+      if(search_words.indexOf(word) != -1){
+        results.push(word)
+      }
+  }
+  // If result is already more than 0, Return
+  if (results.length != 0){
+    return results;
+  }
+
+  // Second rule of our search: If a partial word is matched
+  if(search_words.indexOf("veggie") > -1) {
+    results.push("omlette");
+    results.push("quiche");
+  }
+  if(search_words.indexOf("huevos") > -1){
+    results.push("rancheros");
+  }
+  if(search_words.indexOf("spinach") > -1 || search_words.indexOf("potato") > -1){
+    results.push("frittata");
+  }
+  // If results more than 0, Return
+  if(results.length > 0 ){
+    return results;
+  }
+
+  // Third Rule, add all the recipies according to filters:
+  // Serving_wise:
+  var serving_res = null;
+  if(servings != "All"){
+      serving_res = servings_map[servings]
+      console.log(serving_res)
+  }
+
+  // Time_wise:
+  var prep_res = null;
+  if(time_bar != 50){
+    if(time_bar < 25) {
+      prep_res = []
+    }
+    else if(time_bar < 50) {
+      prep_res = ["omlette",  "rancheros"]
+    }
+    else if(time_bar < 75) {
+      prep_res = ["omlette", "rancheros", "frittata"]
+    }
+    else {
+      prep_res = ["omlette", "quiche", "rancheros", "frittata"]
+    }
+  }
+
+  // Difficulty_wise:
+  var diff_res = null;
+  if(difficulty != "All") {
+    diff_res = difficulty_map[difficulty]
+  }
+
+  // Finally, filterwise take the intersection as results
+  for(i=0; i < 4; i++){
+    name = names[i]
+    common = true
+    // servings
+    if (serving_res != null){
+      common = common && (serving_res.indexOf(name) != -1)
+    }
+    // timewise
+    if(prep_res != null){
+      common =common && (prep_res.indexOf(name) != -1)
+    }
+    // Difficulty_wise
+    if(diff_res != null){
+      common = common &&(diff_res.indexOf(name) != -1)
+    }
+    // If common, send the result
+    if(common){
+      results.push(name)
+    }
+  }
+  return results
+}
+
+/// It shows the Results
+/// Add elements one by one
+function show_results(results){
+  document.getElementsByClassName("results-show")[0].innerHTML = ""
+  innerHTML = ""
+  // Now, add as we get from the results
+  if(results.indexOf("omlette") != -1){
+    innerHTML = innerHTML +
+    "<div class='recipe-overview'> \
+      <a href='recipes/veggie_omelette.html' class='click'> \
+        <h1 class='clickable_header'>Veggie Omelette</h1> \
+        <div id='image'> \
+          <img src='images/vegan_omelette.jpg'> \
+        </div> \
+      </a> \
+      <div id='content'> \
+        <h2>Difficulty:</h2> Easy <br> \
+        <h2>Prep Time:</h2> 15 mins <br> \
+        <h2>Calories:</h2> 400 calories <br> \
+        <h2>Servings:</h2> 1 serving <br> \
+      </div> \
+    </div>"
+  }
+
+  if(results.indexOf("quiche") != -1){
+    if(innerHTML == ""){
+      innerHTML = innerHTML +
+      '<div class="recipe-overview"> \
+        <a href="recipes/veggie_quiche.html" class="click"> \
+          <h1>Loaded Veggie Quiche</h1> \
+          <div id="image"> \
+            <img src="images/veggie_quiche.jpg"> \
+          </div> \
+        </a> \
+        <div id="content"> \
+          <h2>Difficulty:</h2> Medium <br> \
+          <h2>Prep Time:</h2> 45 mins <br> \
+          <h2>Calories:</h2> 300 calories <br> \
+          <h2>Servings:</h2> 4 servings <br> \
+        </div> \
+      </div>'
+    }
+    else{
+    innerHTML = innerHTML +
+    '<div class="recipe-overview" style="background-color:var(--light-gray)"> \
+      <a href="recipes/veggie_quiche.html" class="click"> \
+        <h1>Loaded Veggie Quiche</h1> \
+        <div id="image"> \
+          <img src="images/veggie_quiche.jpg"> \
+        </div> \
+      </a> \
+      <div id="content"> \
+        <h2>Difficulty:</h2> Medium <br> \
+        <h2>Prep Time:</h2> 45 mins <br> \
+        <h2>Calories:</h2> 300 calories <br> \
+        <h2>Servings:</h2> 4 servings <br> \
+      </div> \
+    </div>'
+    }
+  }
+
+  if(results.indexOf("rancheros") != -1) {
+    if(innerHTML == "" || innerHTML.length > 600) {
+      innerHTML = innerHTML +
+      '<div class="recipe-overview"> \
+        <a href="recipes/huevos_rancheros.html" class="click"> \
+          <h1>Huevos Rancheros</h1> \
+          <div id="image"> \
+            <img src="images/huevos_rancheros.jpg"> \
+          </div> \
+        </a> \
+        <div id="content"> \
+          <h2>Difficulty:</h2> Easy <br> \
+          <h2>Prep Time:</h2> 15 mins <br> \
+          <h2>Calories:</h2> 450 calories <br> \
+          <h2>Servings:</h2> 2 servings <br> \
+        </div> \
+      </div>'
+    }
+    else{
+      innerHTML = innerHTML +
+      '<div class="recipe-overview" style="background-color:var(--light-gray)"> \
+        <a href="recipes/huevos_rancheros.html" class="click"> \
+          <h1>Huevos Rancheros</h1> \
+          <div id="image"> \
+            <img src="images/huevos_rancheros.jpg"> \
+          </div> \
+        </a> \
+        <div id="content"> \
+          <h2>Difficulty:</h2> Easy <br> \
+          <h2>Prep Time:</h2> 15 mins <br> \
+          <h2>Calories:</h2> 450 calories <br> \
+          <h2>Servings:</h2> 2 servings <br> \
+        </div> \
+      </div>'
+
+    }
+  }
+
+  if(results.indexOf("frittata") != -1) {
+    if(results.length == 2 || results.length == 4) {
+      innerHTML = innerHTML +
+      '<div class="recipe-overview" style="background-color:var(--light-gray)"> \
+        <a href="recipes/veggie_frittata.html" class="click"> \
+          <h1>Spinach Potato Frittata</h1> \
+          <div id="image"> \
+            <img src="images/veggie_frittata.jpg"> \
+          </div> \
+        </a> \
+        <div id="content"> \
+          <h2>Difficulty:</h2> Medium <br> \
+          <h2>Prep Time:</h2> 30 mins <br> \
+          <h2>Calories:</h2> 250 calories <br> \
+          <h2>Servings:</h2> 4 servings <br> \
+        </div> \
+      </div>'
+    }
+    else{
+      innerHTML = innerHTML +
+      '<div class="recipe-overview"> \
+        <a href="recipes/veggie_frittata.html" class="click"> \
+          <h1>Spinach Potato Frittata</h1> \
+          <div id="image"> \
+            <img src="images/veggie_frittata.jpg"> \
+          </div> \
+        </a> \
+        <div id="content"> \
+          <h2>Difficulty:</h2> Medium <br> \
+          <h2>Prep Time:</h2> 30 mins <br> \
+          <h2>Calories:</h2> 250 calories <br> \
+          <h2>Servings:</h2> 4 servings <br> \
+        </div> \
+      </div>'
+    }
+  }
+  document.getElementsByClassName("results-show")[0].innerHTML = innerHTML;
+}
+
+function perform_search(){
+    show_results(find_results());
+}
+////
 jQuery(document).ready(function($){
 
   console.log(localStorage.getObj("favoritedRecipes"));

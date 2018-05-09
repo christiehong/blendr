@@ -15,9 +15,21 @@
 	box-sizing: border-box;
 }
 
+table.content-holder {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+.content-holder td {
+  /*border: 2px solid var(--dark-purple);*/
+}
+
 .filters {
   width: 20%;
+  height: 100%;
   float: left;
+  position: fixed;
+  border-right: 2px solid var(--dark-purple);
 }
 
 .filter-header {
@@ -74,10 +86,8 @@
 
 .results {
   margin-top: 0px;
-  width: 80%;
+  width: 100%;
   float: left;
-  border-collapse: collapse;
-  border: 2px solid var(--dark-purple);
 }
 
 /* ----- PRIMARY STYLING ----- */
