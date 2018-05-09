@@ -1,6 +1,6 @@
 var slideIndex = 1
 var customerName
-var level = "INTERMEDIATE"
+var level = "MEDIUM"
 var allergies = new Set()
 var preferences = new Set()
 
@@ -98,7 +98,7 @@ function levelSelect(ele) {
 }
 
 function storeInfo() {
-	sessionStorage.setObj("allergies", allergies)
-	sessionStorage.setObj("preferences", preferences)
+	sessionStorage.setObj("allergies", Array.from(allergies))
+	sessionStorage.setObj("preferences", Array.from(preferences))
 	sessionStorage.setObj("level", level)
 }
