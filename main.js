@@ -152,7 +152,7 @@ function find_results(){
 
   // Time_wise:
   var prep_res = null;
-  if(time_bar != 50){
+  if(time_bar != 100){
     if(time_bar < 25) {
       prep_res = []
     }
@@ -333,6 +333,7 @@ function show_results(results){
     }
   }
   document.getElementsByClassName("results-show")[0].innerHTML = innerHTML;
+
   if(results.length == 0){
     document.getElementById("header-text").innerHTML="Sorry, we couldn't find a match. Maybe try a different one..."
   }
@@ -374,8 +375,9 @@ function clearAll(){
   document.getElementsByClassName("restrictions")[0].innerHTML = ""
   // Set time_bar
   document.getElementById("mySlider").value = "100"
+  document.getElementById("time-label").innerHTML = "60 minutes"
   // Number of servings
-  document.getElementsByName("servings")[0].value= "--"
+  document.getElementsByName("servings")[0].value= "-----"
   // Difficulty
   document.getElementsByName("Difficulty")[0].value = "All"
 }

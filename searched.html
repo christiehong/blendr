@@ -50,8 +50,7 @@
 
 			<!-- Filter-Header -->
 			<div class="filter-header">
-				<h2>Filters</h2>
-				<button id="filters-clear" onclick="clearAll()">Clear all</button>
+				<h2 style>Filters</h2>
 			</div>
 			<!-- Filter-Restrictions -->
 			<div class="filter-restrictions">
@@ -64,17 +63,17 @@
 				</select> -->
 				<ul class="restrictions">
 				</ul>
-				<input type="text" id="Allergy_bar" placeholder="add allergies..."><button onclick="addAllergy()">+</button>
+				<input type="text" id="Allergy_bar" placeholder="add allergies..."><i id="search-icon" class="fas fa-search" onclick="addAllergy()"></i></input>
 				<ul class="preferences">
 				</ul>
-				<input type="text" id="Preference_bar" placeholder="add preferences..."><button onclick="addPreference()">+</button>
+				<input type="text" id="Preference_bar" placeholder="add preferences..."><i id="search-icon" class="fas fa-search" onclick="addPreference()"></i></input>
 
 			</div>
 
 			<!-- Filter-preptime -->
 			<div class="filter-preptime">
 				<h2>Prep Time</h2>
-				<input type="range" list="tickmarks" min="1" max="100" value="50" class="preptime-slider" id="mySlider">
+				<input type="range" list="tickmarks" min="1" max="100" value="100" class="preptime-slider" id="mySlider">
 
 					<datalist id="tickmarks">
 						<option value="0">
@@ -83,13 +82,13 @@
 					  <option value="75">
 					  <option value="100">
 					</datalist>
-				<label id= "time-label" style="display:inline-block; margin-left: 90px;">30 minutes</label>
+				<label id= "time-label" >60 minutes</label>
 			</div>
 			<!-- Filter-Servings -->
 			<div class="filter-servings">
 				<h2>Number of servings</h2>
 				<select name="servings" class="servings-dropdown">
-					<option>--</option>
+					<option>-----</option>
 					<option>1</option>
 					<option>2</option>
 					<option>3</option>
@@ -106,8 +105,10 @@
 					<option>Hard</option>
 				</select>
 			</div>
-			<div style="text-align: center;">
-				<button class="update" onclick="perform_search()">Update Search</button>
+			<div style="text-align: center;margin-top: 20px; display: inline-block; width:100%;">
+				<button type = "button" id="filters-clear" onclick="clearAll()">Clear all</button>
+
+				<button type = "button" class="update" id="submit" onclick="perform_search()">Update Search</button>
 			</div>
 			<!--
 
@@ -131,7 +132,7 @@
 				<div class="results">
 					<!-- Results-Tags -->
 					<div class="results-tags">
-						<h2> Best recipes for your search... </h2>
+						<h2 id="header-text"> Best recipes for your search... </h2>
 
 					</div>
 					<!-- Results-Show -->
