@@ -329,6 +329,18 @@ main button {
 #back {
   float: left;
   display: inline;
+  background-color: var(--dark-purple);
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  border-style: none;
+  color: white;
+  font-size: 30px;
+  top: 10%;
+  left: 10px;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
 }
 
 #favorite {
@@ -515,7 +527,7 @@ main button {
     padding: 12px 20px 12px 40px;
     border: 1px solid #ddd;
     margin-top: 20px;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
 }
 
 
@@ -561,7 +573,7 @@ main button {
 #favorites_pic{
   clip-path: circle(14vh at center);
   height: 30vh;
-  width: 25vw;  
+  width: 25vw;
   margin-bottom: 20px;
 }
 
