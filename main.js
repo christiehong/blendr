@@ -342,19 +342,23 @@ function perform_search(){
 function addAllergy(){
   restriction_list = document.getElementsByClassName("restrictions")[0]
   allergy = document.getElementById("Allergy_bar").value
-  new_item = document.createElement("li")
-  new_item.appendChild(document.createTextNode(allergy))
-  restriction_list.appendChild(new_item)
-  document.getElementById("Allergy_bar").value = ""
+  if(allergy != ""){
+    new_item = document.createElement("li")
+    new_item.appendChild(document.createTextNode(allergy))
+    restriction_list.appendChild(new_item)
+    document.getElementById("Allergy_bar").value = ""
+  }
 }
 
 function addPreference(){
   preference_list = document.getElementsByClassName("preferences")[0]
   preference = document.getElementById("Preference_bar").value
-  new_item = document.createElement("li")
-  new_item.appendChild(document.createTextNode(preference))
-  preference_list.appendChild(new_item)
-  preference = document.getElementById("Preference_bar").value = ""
+  if(preference != ""){
+    new_item = document.createElement("li")
+    new_item.appendChild(document.createTextNode(preference))
+    preference_list.appendChild(new_item)
+    preference = document.getElementById("Preference_bar").value = ""
+  }
 }
 
 function clearAll(){
