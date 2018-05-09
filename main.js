@@ -309,7 +309,7 @@ jQuery(document).ready(function($){
   }
 
 	var page = window.location.pathname.split("/").pop();
-	if (page == "landing.html" || page == "searched.html") {
+	if (page == "landing.html" || page == "searched.html" || page == "one_list.html") {
 		$("#cart").hide();
 	}
 
