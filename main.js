@@ -148,9 +148,7 @@ function find_results(){
     return results;
   }
 
-  if(results.length == 0 && document.getElementById("search-bar").value != ""){
-    return results;
-  }
+
   // Second rule of our search: If a partial word is matched
   if(search_words.indexOf("veggie") > -1) {
     results.push("omelette");
@@ -167,6 +165,9 @@ function find_results(){
     return results;
   }
 
+  if(results.length == 0 && document.getElementById("search-bar").value != ""){
+    return results;
+  }
   // Third Rule, add all the recipies according to filters:
   // Serving_wise:
   var serving_res = null;
