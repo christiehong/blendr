@@ -28,7 +28,7 @@
 
 			<div class="searching">
 				<!-- Added ID for search bar - Das -->
-				<input type="text" id="search-bar" placeholder="try sandwiches ... ">
+				<input type="text" id="search-bar" placeholder="try potato ... ">
 				<!-- <a href="searched.html"> -->
 					<i id="search-icon" class="fas fa-search" onclick="perform_search()"></i>
 				<!--</a> -->
@@ -50,11 +50,11 @@
 			<!-- Filter-Header -->
 			<div class="filter-header">
 				<h2>Filters</h2>
-				<button id="filters-clear">Clear all</button>
+				<button id="filters-clear" onclick="clearAll()">Clear all</button>
 			</div>
 			<!-- Filter-Restrictions -->
 			<div class="filter-restrictions">
-				<h2>Restrictions & Preferences</h2>
+				<h2>Allergies & Preferences</h2>
 				<!-- <select name="restrictions" multiple="" class="restrictions-dropdown">
 					<option value="Vergiterian">Vegeterian</option>
 					<option value="Vegan">Vegan</option>
@@ -62,13 +62,11 @@
 					<option value="Treenuts">Treenuts</option>
 				</select> -->
 				<ul class="restrictions">
-					<li>Vegetarian</li>
 				</ul>
-				<input type="text" placeholder="add restrictions..."><button>+</button>
+				<input type="text" id="Allergy_bar" placeholder="add allergies..."><button onclick="addAllergy()">+</button>
 				<ul class="preferences">
-					<li>Potato</li>
 				</ul>
-				<input type="text" placeholder="add preferences..."><button>+</button>
+				<input type="text" id="Preference_bar" placeholder="add preferences..."><button onclick="addPreference()">+</button>
 
 			</div>
 
@@ -90,7 +88,7 @@
 					  <option value="90">
 					  <option value="100">
 					</datalist>
-				<label style="display:inline-block;">30 minutes</label>
+				<label id= "time-label" style="display:inline-block; margin-left: 90px;">30 minutes</label>
 			</div>
 			<!-- Filter-Servings -->
 			<div class="filter-servings">
@@ -112,6 +110,9 @@
 					<option>Medium</option>
 					<option>Hard</option>
 				</select>
+			</div>
+			<div style="text-align: center;">
+				<button class="update" onclick="perform_search()">Update Search</button>
 			</div>
 			<!--
 

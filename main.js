@@ -68,6 +68,19 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("search-icon").click();
     }
   });
+  document.getElementById("Preference_bar").addEventListener("keyup", function(event){
+    event.preventDefault();
+    if(event.keyCode == 13) {
+      addPreference();
+    }
+  });
+  document.getElementById("Allergy_bar").addEventListener("keyup", function(event){
+    event.preventDefault();
+    if(event.keyCode == 13) {
+      addAllergy();
+    }
+  });
+  document.getElementById("mySlider").addEventListener("change", function(event){fixTime()});
 }
 });
 
@@ -324,6 +337,45 @@ function show_results(results){
 
 function perform_search(){
     show_results(find_results());
+}
+
+function addAllergy(){
+  restriction_list = document.getElementsByClassName("restrictions")[0]
+  allergy = document.getElementById("Allergy_bar").value
+  new_item = document.createElement("li")
+  new_item.appendChild(document.createTextNode(allergy))
+  restriction_list.appendChild(new_item)
+  document.getElementById("Allergy_bar").value = ""
+}
+
+function addPreference(){
+  preference_list = document.getElementsByClassName("preferences")[0]
+  preference = document.getElementById("Preference_bar").value
+  new_item = document.createElement("li")
+  new_item.appendChild(document.createTextNode(preference))
+  preference_list.appendChild(new_item)
+  preference = document.getElementById("Preference_bar").value = ""
+}
+
+function clearAll(){
+  // Clear PREFERENCES
+  document.getElementsByClassName("preferences")[0].innerHTML = ""
+  // Clear Restrictions
+  document.getElementsByClassName("restrictions")[0].innerHTML = ""
+  // Set time_bar
+  document.getElementById("mySlider").value = "100"
+  // Number of servings
+  document.getElementsByName("servings")[0].value= "--"
+  // Difficulty
+  document.getElementsByName("Difficulty")[0].value = "All"
+}
+
+function fixTime(){
+  time = Math.round(parseInt(document.getElementById("mySlider").value) * 60 / 100)
+  time_string = time + " minutes"
+
+  document.getElementById("time-label").innerHTML = time_string
+
 }
 ////
 jQuery(document).ready(function($){
