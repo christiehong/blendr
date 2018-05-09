@@ -79,11 +79,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     document.getElementById("mySlider").addEventListener("change", function(event){fixTime()});
     // If sessionStorage has any saved word
-    document.getElementById("search-bar").value = sessionStorage.getItem("word")
-    if (document.getElementById("search-bar").value != ""){
-      perform_search();
+    shouldSearch = sessionStorage.getItem("lastPage") == "Landing"
+    if(shouldSearch){
+      document.getElementById("search-bar").value = sessionStorage.getItem("word")
+      sessionStorage.setItem("lastPage", "Search")
+      if (document.getElementById("search-bar").value != "" && shouldSearch){
+        perform_search();
+      }
     }
-
   }
 
   // If landing page
@@ -101,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Saving searched word
 function save_search(){
   sessionStorage.setItem("word", document.getElementById("search-bar").value)
+  sessionStorage.setItem("lastPage", "Landing")
 }
 var names = ["omelette", "quiche", "rancheros", "frittata"]
 var headers = {"omelette": 1,
@@ -144,6 +148,9 @@ function find_results(){
     return results;
   }
 
+  if(results.length == 0 && document.getElementById("search-bar").value != ""){
+    return results;
+  }
   // Second rule of our search: If a partial word is matched
   if(search_words.indexOf("veggie") > -1) {
     results.push("omelette");
@@ -325,7 +332,7 @@ function show_results(results){
           </div> \
         </a> \
         <div id="content"> \
-          <h2>Difficulty:</h2> Medium <br> \
+          <h2>Difficulty:</h2> Hard <br> \
           <h2>Prep Time:</h2> 30 mins <br> \
           <h2>Calories:</h2> 250 calories <br> \
           <h2>Servings:</h2> 4 servings <br> \
@@ -342,7 +349,7 @@ function show_results(results){
           </div> \
         </a> \
         <div id="content"> \
-          <h2>Difficulty:</h2> Medium <br> \
+          <h2>Difficulty:</h2> Hard <br> \
           <h2>Prep Time:</h2> 30 mins <br> \
           <h2>Calories:</h2> 250 calories <br> \
           <h2>Servings:</h2> 4 servings <br> \
