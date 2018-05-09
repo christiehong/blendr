@@ -59,9 +59,9 @@ function find_results(){
   var difficulty = document.getElementsByName("Difficulty")[0].value
   var time_bar = parseInt(document.getElementById("mySlider").value)
 
-  var isPot = document.getElementById("checkbox-pot").checked
-  var isPan = document.getElementById("checkbox-pan").checked
-  var isOven = document.getElementById("checkbox-oven").checked
+  //var isPot = document.getElementById("checkbox-pot").checked
+  //var isPan = document.getElementById("checkbox-pan").checked
+  //var isOven = document.getElementById("checkbox-oven").checked
 
   results = []
   // First rule of our search: If a word is matched, show:

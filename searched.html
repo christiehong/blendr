@@ -70,7 +70,22 @@
 			<!-- Filter-preptime -->
 			<div class="filter-preptime">
 				<h2>Prep Time</h2>
-				<input type="range" min="1" max="100" value="50" class="preptime-slider" id="mySlider"></input>
+				<input type="range" list="tickmarks" min="1" max="100" value="50" class="preptime-slider" id="mySlider">
+
+					<datalist id="tickmarks">
+						<option value="0">
+					  <option value="10">
+					  <option value="20">
+					  <option value="30">
+					  <option value="40">
+					  <option value="50">
+					  <option value="60">
+					  <option value="70">
+					  <option value="80">
+					  <option value="90">
+					  <option value="100">
+					</datalist>
+				<label style="display:inline-block;">30 minutes</label>
 			</div>
 			<!-- Filter-Servings -->
 			<div class="filter-servings">
@@ -93,7 +108,8 @@
 					<option>Hard</option>
 				</select>
 			</div>
-			<!-- Filter-Cookware -->
+			<!--
+
 			<div class="filter-cookware">
 				<h2>Available Cookware:</h2>
 				<div class="cookware-dropdown">
@@ -102,6 +118,7 @@
 					<input type="checkbox" id="checkbox-oven">oven</input><br>
 				</div>
 			</div>
+			-->
 		</div>
 		<tr>
 			<td width="20%">
