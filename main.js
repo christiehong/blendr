@@ -150,6 +150,12 @@ function find_results(){
 
 
   // Second rule of our search: If a partial word is matched
+  if(search_words.indexOf("egg") > -1 || search_words.indexOf("eggs") > -1){
+    results.push("omelette");
+    results.push("quiche");
+    results.push("rancheros");
+    results.push("frittata");
+  }
   if(search_words.indexOf("veggie") > -1) {
     results.push("omelette");
     results.push("quiche");
